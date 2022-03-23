@@ -1,16 +1,16 @@
-import {HashLink } from "react-router-dom";
+import {NavLink } from "react-router-dom";
 
 export default function Header(active){
     return(
         <header>
             <div>
             <img src="../assets/icon.png"/>
-            <HashLink to="/"><h1>Fonder</h1></HashLink>
+            <NavLink to="/"><h1>Fonder</h1></NavLink>
             </div>
             <nav>
                 <ul>
-                    <li><HashLink to="support">Support</HashLink></li>
-                    <li><HashLink to="submission">Submission</HashLink></li>
+                    <li><NavLink to="support">Support</NavLink></li>
+                    <li><NavLink to="submission">Submission</NavLink></li>
                 </ul>
             </nav>
         </header>

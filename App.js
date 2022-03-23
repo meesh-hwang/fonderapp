@@ -17,8 +17,8 @@ const App = () => {
         <Header />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/submission" element={<Submission />} />
+          <Route path="support" element={<Support />} />
+          <Route path="submission" element={<Submission />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
