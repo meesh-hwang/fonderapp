@@ -1,5 +1,5 @@
 
-import {View, Text} from 'react-native-web';
+import {View, Text} from 'react-native';
 import {Helmet} from "react-helmet";
 
 import Header from "../components/Header";
