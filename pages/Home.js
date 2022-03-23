@@ -8,7 +8,7 @@ const Home = () =>{
     return(
         
     <View>
-        <Header active="home" />
+        <Header />
         <Text>Meesh is the boss</Text>
         <Helmet>
                 <meta charSet="utf-8" />
