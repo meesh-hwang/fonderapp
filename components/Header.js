@@ -9,8 +9,8 @@ export default function Header(active){
             </div>
             <nav>
                 <ul>
-                    <li><Link to="/support">Support</Link></li>
-                    <li><Link to="/submission">Submission</Link></li>
+                    <li><Link to="support">Support</Link></li>
+                    <li><Link to="submission">Submission</Link></li>
                 </ul>
             </nav>
         </header>
