@@ -12,7 +12,7 @@ import Header from './components/Header';
 
 const App = () => {
   return (
-      <BrowserRouter>
+      <Router>
         <Header />
         <Routes>
           <Route exact path="fonderapp" element={<Home />} />
@@ -20,7 +20,7 @@ const App = () => {
           <Route path="fonderapp/submission" element={<Submission />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
   );
 }
 
