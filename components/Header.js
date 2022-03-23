@@ -1,8 +1,6 @@
 import {Link } from "react-router-dom";
 
-
-const Header = (active) =>{
-    console.log(active.active);
+export default function Header(active){
     return(
         <header>
             <div>
@@ -16,6 +14,5 @@ const Header = (active) =>{
                 </ul>
             </nav>
         </header>
-    )
+    );
 }
-export default Header
