@@ -5,7 +5,7 @@ export default function Header(active){
         <header>
             <div>
             <img src="../assets/icon.png"/>
-            <NavLink to="/fonderapp"><h1>Fonder</h1></NavLink>
+            <NavLink to="/fonderapp/"><h1>Fonder</h1></NavLink>
             </div>
             <nav>
                 <ul>
