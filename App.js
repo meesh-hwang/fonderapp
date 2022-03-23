@@ -1,5 +1,5 @@
 import * as React from "react";
-import {BrowserRouter as Router, Routes, Route, Switch } from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from './pages/Home';
 import NotFound from "./pages/NotFound";
@@ -15,12 +15,10 @@ const App = () => {
       <Router>
         <Header />
         <Routes>
-          <Switch>
-            <Route element={<NotFound />} />
-            <Route exact path="/" element={<Home />} />
-            <Route path="support" element={<Support />} />
-            <Route path="submission" element={<Submission />} />
-          </Switch>
+          <Route element={<NotFound />} />
+          <Route exact path="/" element={<Home />} />
+          <Route path="support" element={<Support />} />
+          <Route path="submission" element={<Submission />} />
         </Routes>
       </Router>
   );
