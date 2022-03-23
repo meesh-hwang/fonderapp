@@ -15,7 +15,7 @@ const App = () => {
       <Router forceRefresh={true}>
         <Routes>
           <Route path="*" element={<NotFound />} />
-          <Route exact path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="support" element={<Support />} />
           <Route path="submission" element={<Submission/>} />
         </Routes>
