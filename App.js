@@ -1,6 +1,5 @@
 import * as React from "react";
 import {BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import {Helmet} from "react-helmet";
 
 import Home from './pages/Home';
 import NotFound from "./pages/NotFound";
@@ -13,13 +12,13 @@ import Header from './components/Header';
 
 const App = () => {
   return (
-      <Router forceRefresh={true}>
+      <Router>
         <Header />
         <Routes>
-          <Route path="*" element={<NotFound />} />
-          <Route path="/" element={<Home />} />
+          <Route path='*' element={<NotFound />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="support" element={<Support />} />
-          <Route path="submission" element={<Submission/>} />
+          <Route path="submission" element={<Submission />} />
         </Routes>
       </Router>
   );
