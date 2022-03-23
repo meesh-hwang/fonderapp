@@ -4,9 +4,8 @@ import {Helmet} from "react-helmet";
 
 import Header from "../components/Header";
 
-const Home = () =>{
+export default function() {
     return(
-        
     <div>
         <Header />
         <h1>Meesh is the boss</h1>
@@ -15,6 +14,5 @@ const Home = () =>{
                 <title>Fonder</title>
         </Helmet>
     </div>
-    )
+    );
 }
-export default Home;
