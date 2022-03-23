@@ -1,5 +1,7 @@
+import { View, Text } from "react-native-web";
+
 export default function NotFound() {
     return(
-        <div><h1>Yo</h1></div>
+        <View><Text>Yo</Text></View>
     );
 }
