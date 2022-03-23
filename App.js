@@ -8,11 +8,13 @@ import Support from './pages/Support';
 import Submission from "./pages/Submission";
 import "./css/reset.css";
 import "./css/main.css";
+import Header from './components/Header';
 
 
 const App = () => {
   return (
       <Router forceRefresh={true}>
+        <Header />
         <Routes>
           <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Home />} />
