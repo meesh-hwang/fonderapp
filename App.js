@@ -15,9 +15,9 @@ const App = () => {
       <Router>
         <Header />
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/submission" element={<Submission />} />
+          <Route exact path="/fonderapp" element={<Home />} />
+          <Route path="/fonderapp/support" element={<Support />} />
+          <Route path="/fonderapp/submission" element={<Submission />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
