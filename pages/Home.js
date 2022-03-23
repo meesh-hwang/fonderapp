@@ -7,14 +7,14 @@ import Header from "../components/Header";
 const Home = () =>{
     return(
         
-    <View>
+    <div>
         <Header />
-        <Text>Meesh is the boss</Text>
+        <h1>Meesh is the boss</h1>
         <Helmet>
                 <meta charSet="utf-8" />
                 <title>Fonder</title>
         </Helmet>
-    </View>
+    </div>
     )
 }
 export default Home;
