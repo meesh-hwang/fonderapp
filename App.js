@@ -1,5 +1,5 @@
 import * as React from "react";
-import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route, HashRouter } from "react-router-dom";
 
 import Home from './pages/Home';
 import NotFound from "./pages/NotFound";
@@ -12,6 +12,7 @@ import Header from './components/Header';
 
 const App = () => {
   return (
+    <HashRouter>
       <Router>
         <Header />
         <Routes>
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
+    </HashRouter>
   );
 }
 
