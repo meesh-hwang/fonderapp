@@ -15,7 +15,7 @@ const App = () => {
       <Router>
         <Header />
         <Routes>
-          <Route exact path="/fonderapp" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="/fonderapp/support" element={<Support />} />
           <Route path="/fonderapp/submission" element={<Submission />} />
           <Route path="*" element={<NotFound />} />
