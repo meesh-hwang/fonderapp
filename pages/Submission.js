@@ -1,9 +1,17 @@
-import {View, Text} from 'react-native-web';
+import {View} from 'react-native';
+import {Helmet} from "react-helmet";
 
-export default function Submission(){
+
+
+const Submission = () =>{
     return(
     <View>
-        <Text>This is submissions page</Text>
+        <Helmet>
+                <meta charSet="utf-8" />
+                <title>Fonder</title>
+                <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&family=Oranienbaum&family=Shrikhand&display=swap" rel="stylesheet"/>
+        </Helmet>
     </View>
-    );
+    )
 }
+export default Submission;

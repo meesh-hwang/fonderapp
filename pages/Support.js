@@ -1,9 +1,24 @@
-import {View, Text} from 'react-native-web';
+import {View} from 'react-native';
+import {Helmet} from "react-helmet";
+import SupportBanner from "../components/SupportBanner";
+import FAQHeader from '../components/FAQHeader';
+import FAQAccordion from '../components/FAQAccordion.js';
 
-export default function Support(){
+
+const Support = () =>{
     return(
     <View>
-        <Text>This is Support</Text>
+        <Helmet>
+                <meta charSet="utf-8" />
+                <title>Fonder</title>
+                <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&family=Oranienbaum&family=Shrikhand&display=swap" rel="stylesheet"/>
+        </Helmet>
+        <SupportBanner />
+        <FAQHeader />
+        <FAQAccordion />
+    
+
     </View>
-    );
+    )
 }
+export default Support;
