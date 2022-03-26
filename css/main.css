@@ -14,7 +14,7 @@ h2,h3,h4,h5,h6{
     font-family: 'Assistant', sans-serif;
 }
 p{
-    font-size: 18px;
+    font-size: 15px;
 }
 
 
@@ -41,15 +41,15 @@ p{
     background: rgb(255,229,180);
     background: linear-gradient(0deg, rgba(255,246,229,1) 0%, rgba(230,98,85,1) 100%);
 }
-
 /* Header */
 
 .main-header{
-    padding: 20px 20px;
     display: flex;
     justify-content: space-between;
     z-index: 10;
     height: 60px;
+    align-items: center;
+    padding: 0 5vw;
 }
 .main-header.nav-background{
     background: #e66255;
@@ -107,15 +107,15 @@ p{
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    z-index: 5;
 }
 
 .gb-nav.open{
     display: flex;
-    z-index: 1;
 }
 .gb-nav ul{
     text-align: center;
-    flex-basis: 35%;
+    flex-basis: 50%;
 }
 .gb-nav li{
     margin: 25px 0;
@@ -125,152 +125,6 @@ p{
     color: #fff;
     font-weight: bold;
 }
-
-/*header mobile*/
-
-.main-header.mobile{
-    padding: 30px 40px;
-    height: 70px;
-}
-
-.gb-nav.mobile   li .nav-link{
-    font-size: 30px;
-}
-
-.mobileApp.mobile{
-    padding: 50px 0;
-}
-h4.downloadText.mobile{
-    margin-bottom: 20px;
-    font-size: 15px;
-}
-div.mobileDownloadApp.mobile img{
-    height: 35px;
-}
-
-.mobileApp.mobile a{
-    margin-top: 40px;
-    font-size: 10px;
-}
-
-
-/*header tablet*/
-
-.main-header.tablet{
-    padding: 35px 45px;
-    height: 75px;
-}
-.main-logo.tablet{
-    height: 25px;
-}
-.gb-nav.tablet li{
-    margin: 25px 0;
-}
-.gb-nav.tablet   li .nav-link{
-    font-size: 32px;
-}
-h4.downloadText.tablet{
-    font-size: 18px;
-}
-div.mobileDownloadApp.mobile img{
-    height: 37px;
-}
-.mobileApp.mobile a{
-    margin-top: 45px;
-    font-size: 12px;
-}
-
-/*header laptop*/
- .main-logo.laptop {
-    max-width: 180px;
-    min-height: 30px;
-    object-fit: contain;
-}
-
-.main-header.laptop {
-    height:100px;
-    display: flex;
-    align-items: center;
-    padding-left:50px;
-    padding-right:50px;
-}
-
-.gb-nav.laptop {
-    position:relative;
-    display: flex;
-    flex-direction: row;
-    background: none;
-    z-index: 1;
-    max-height: 100%;
-    align-items: center;
-}
-
-.gb-nav.laptop li{
-    margin: 0;
-}
-.gb-nav.laptop li:nth-child(1) {
-    margin-right:45px;
-}
-
-.gb-nav.laptop ul {
-    display: flex;
-    align-items: flex-end;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding-top:25px;
-}
-
-.gb-nav.laptop li .nav-link.laptop{
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    color: #FFD88F;
-}
-
-/*header desktop*/
-.main-logo.desktop {
-    max-width: 200px;
-    min-height: 40px;
-    object-fit: contain;
-}
-
-.main-header.desktop{
-    height: 110px;
-    padding: 40px 50px;
-}
-
-.gb-nav.desktop {
-    position:relative;
-    display: flex;
-    flex-direction: row;
-    background: none;
-    z-index: 1;
-    max-height: 100%;
-    align-items: center;
-}
-
-.gb-nav.desktop li:nth-child(1) {
-    margin-right:60px;
-}
-
-.gb-nav.desktop ul {
-    display: flex;
-    align-items: flex-end;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding-top:35px;
-}
-.gb-nav.desktop li .nav-link.desktop{
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 26px;
-    color: #FFD88F;
-}
-
-
-
 
 /* */
 .mobileApp{
@@ -298,6 +152,152 @@ div.mobileDownloadApp.mobile img{
     text-decoration: underline;
     font-size: 8px;
 }
+
+/*-------------HEADER MEDIA QUERIES -------------*/
+
+/*header mobile*/
+.main-header.mobile{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 5vw;
+}
+.gb-nav.mobile li .nav-link{
+    font-size: 30px;
+}
+.mobileApp.mobile{
+    padding: 50px 0;
+}
+h4.downloadText.mobile{
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+div.mobileDownloadApp.mobile img{
+    height: 35px;
+}
+
+.mobileApp.mobile a{
+    margin-top: 40px;
+    font-size: 10px;
+}
+/*header tablet*/
+.main-header.tablet{
+    height: 90px;
+    display: flex;
+    align-items: center;
+    padding: 0 5vw;
+}
+.main-logo.tablet{
+    height: 25px;
+}
+.gb-nav.tablet ul{
+    flex-basis: 40%;
+}
+.gb-nav.tablet li{
+    margin: 25px 0;
+}
+.gb-nav.tablet li .nav-link{
+    font-size: 32px;
+}
+h4.downloadText.tablet{
+    font-size: 18px;
+}
+div.mobileDownloadApp.mobile img{
+    height: 37px;
+}
+.mobileApp.mobile a{
+    margin-top: 45px;
+    font-size: 12px;
+}
+/*header laptop*/
+ .main-logo.laptop {
+    max-width: 180px;
+    min-height: 30px;
+    object-fit: contain;
+}
+
+.main-header.laptop {
+    height:100px;
+    display: flex;
+    align-items: center;
+    padding: 0 5vw;
+}
+
+.gb-nav.laptop {
+    position:relative;
+    display: flex;
+    flex-direction: row;
+    background: none;
+    z-index: 1;
+    max-height: 100%;
+    align-items: center;
+}
+
+.gb-nav.laptop ul {
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    align-items: flex-end; 
+    justify-content: flex-end;
+}
+.gb-nav.laptop li{
+    margin: 0;
+    max-width: 30vw;
+}
+.gb-nav.laptop li:nth-child(1) {
+    margin-right:20px;
+}
+
+.gb-nav.laptop li .nav-link.laptop{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: #FFD88F;
+}
+
+/*header desktop*/
+.main-logo.desktop {
+    max-width: 200px;
+    min-height: 40px;
+    object-fit: contain;
+}
+
+.main-header.desktop{
+    align-items: center;
+    height: 110px;
+    padding: 0 10vw;
+}
+
+.gb-nav.desktop {
+    position:relative;
+    display: flex;
+    flex-direction: row;
+    background: none;
+    z-index: 1;
+    max-height: 100%;
+    align-items: center;
+}
+
+.gb-nav.desktop li:nth-child(1) {
+    margin-right:35px;
+}
+
+.gb-nav.desktop ul {
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    align-items: flex-end; 
+    justify-content: flex-end;
+    justify-content: space-between;
+}
+.gb-nav.desktop li .nav-link.desktop{
+    font-family: 'Poppins';
+    font-size: 26px;
+    color: #FFD88F;
+}
+
+
 
 /* Banner */
 
@@ -377,7 +377,7 @@ div.mobileDownloadApp.mobile img{
 }
 /* tablet banner */
 .banner.tablet{
-    padding: 120px 10vw 0;
+    padding: 25px 10vw 0;
     height: calc(100vh - 90px);
     overflow: hidden;
     display:flex;
@@ -419,7 +419,7 @@ div.mobileDownloadApp.mobile img{
 /* laptop.laptop banner */
 
 .banner.laptop{
-    padding: 120px 5vw 0;
+    padding: 50px 5vw 0;
     height:90vh;
     overflow: hidden;
     display:flex;
@@ -484,7 +484,7 @@ div.mobileDownloadApp.mobile img{
 /* desktop.desktop banner */
 
 .banner.desktop{
-    padding: 100px 10vw 0;
+    padding: 25px 10vw 0;
     max-height:100vh;
     min-height: 90vh;
     overflow: hidden;
@@ -499,7 +499,7 @@ div.mobileDownloadApp.mobile img{
 }
 
 .banner.desktop .right-col {
-    flex:0.8;
+    flex:1;
     display: flex;
     align-items: flex-end;
     position: relative;
@@ -510,7 +510,7 @@ div.mobileDownloadApp.mobile img{
     position: absolute;
     top: 80%;
     z-index: -1;
-    left: -200%;
+    left: -150%;
     height: 100%;
     width: 120vw;
     background: #fff;
@@ -553,6 +553,7 @@ div.mobileDownloadApp.mobile img{
     max-height: 60px;
     width:100%;
 }
+
 /* Features */
 .features{
 
@@ -829,6 +830,8 @@ div.mobileDownloadApp.mobile img{
 
 
 
+
+
 /*Footer*/
 .main-ft{
     display: flex;
@@ -872,74 +875,50 @@ div.mobileDownloadApp.mobile img{
 /* Partners and Reviews headings */
 
 .partners, .reviews {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 20px;
 }
-
-.partner-heading, .review-heading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
-
-.partner-heading h1, .review-heading h1{
-    font-family: 'Assistant';
-    font-style: normal;
+.partners h3, .reviews h3{
     font-weight: 700;
-    font-size: 38px;
-    margin-top:80px;
+    font-size: 26px;
     color:#e66255;
     z-index: 1;
-}
+    margin: 0 auto 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
 
-.partner-heading div, .review-heading div {
+}
+.partners h3:after, .reviews h3:after {
+    display: flex;
+    justify-content: center;
+    position: absolute;
     background-color: #F9D8D5;
-    width:75vw;
-    height:30px;
-    margin-top:-12px;
-    z-index: 0;
+    content: "";
+    bottom: -10px;
+    width: 80%;
+    height:20px;
+    z-index: -1;
 }
 
 /* Partners */
 
-.partner-brands {
+.partners .brands{
+    margin-top: 15px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    width:100%;
-    margin-top:30px;
-}
-
-.partner-brands img {
-    max-width: 180px;
-    min-width: 100px;
-    max-height:30px;
-    min-height: 30px;
-    justify-content: space-around;
-}
-
-.partner-brands .row{
-    padding: 20px 10px;
-    flex:1;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.partner-brands .row:nth-child(3){
-    display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.partners .brands img {
+    width: 50%;
+    padding: 10px 10px;
 }
 
-.partner-brands .row:nth-child(1) img:nth-child(1) {
-    max-height: 20px;
-    min-height: 20px;
-}
+
+
+
 
 /* Reviews */
 
@@ -1025,3 +1004,20 @@ p.review {
     padding-bottom:20px;
 }
 
+
+/* Small Devices */
+@media (min-width: 576px){
+
+}
+/* Tablet Devices */
+@media (min-width: 768px){
+
+}
+/* Laptop Devices */
+@media (min-width: 1024px){
+
+}
+/* Desktop Devices */
+@media (min-width: 1200px){
+
+}
