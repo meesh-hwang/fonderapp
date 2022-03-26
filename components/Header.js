@@ -57,7 +57,7 @@ const Header = (active) =>{
             {isMobile &&
                 <header className={window.location.pathname !== "/fonderapp/" ? "main-header mobile nav-background": "main-header mobile"}>
 
-                <Link onClick={()=>toggleNav(false)} to="/"><h1><img src={logo} className="main-logo mobile" /></h1></Link>
+                <Link onClick={()=>toggleNav(false)} to="/fonderapp/"><h1><img src={logo} className="main-logo mobile" /></h1></Link>
                 <div className={nav ? "nav-toggle mobile open" : "nav-toggle mobile"} onClick={() => !nav ? toggleNav(true) : toggleNav(false)}>
                     <div className="line one"></div>
                     <div className="line two"></div>
@@ -84,7 +84,7 @@ const Header = (active) =>{
             {isTablet &&
                 <header className={window.location.pathname !== "/fonderapp/" ? "main-header nav-background tablet": "main-header tablet"}>
 
-                <Link onClick={()=>toggleNav(false)} to="/"><h1><img src={logo} className="main-logo tablet" /></h1></Link>
+                <Link onClick={()=>toggleNav(false)} to="/fonderapp/"><h1><img src={logo} className="main-logo tablet" /></h1></Link>
                 <div className={nav ? "nav-toggle open" : "nav-toggle"} onClick={() => !nav ? toggleNav(true) : toggleNav(false)}>
                     <div className="line one"></div>
                     <div className="line two"></div>
@@ -108,7 +108,7 @@ const Header = (active) =>{
             </header>
             }
             {isLaptop &&
-                <header className='main-header laptop'>
+                <header className='main-header nav-background laptop'>
                     <Link to="/fonderapp/"><h1><img src={logo} className="main-logo laptop" /></h1></Link>
                     <nav className='gb-nav laptop'>
                         <ul>
@@ -119,7 +119,7 @@ const Header = (active) =>{
                 </header>
             }
             {isDesktop &&
-                <header className='main-header desktop'>
+                <header className='main-header nav-background desktop'>
                     <Link to="/fonderapp/"><h1><img src={logo} className="main-logo desktop" /></h1></Link>
                     <nav className='gb-nav desktop'>
                         <ul>
