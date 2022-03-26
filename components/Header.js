@@ -28,9 +28,9 @@ const Header = (active) =>{
         <div style={{maxWidth:'100vw'}}>
 
             {isXMobile && 
-                <header className={window.location.pathname !== "/" ? "main-header nav-background": "main-header"}>
+                <header className={window.location.pathname !== "/fonderapp/" ? "main-header nav-background": "main-header"}>
 
-                <Link onClick={()=>toggleNav(false)} to="/"><h1><img src={logo} className="main-logo" /></h1></Link>
+                <Link onClick={()=>toggleNav(false)} to="/fonderapp/"><h1><img src={logo} className="main-logo" /></h1></Link>
                 <div className={nav ? "nav-toggle open" : "nav-toggle"} onClick={() => !nav ? toggleNav(true) : toggleNav(false)}>
                     <div className="line one"></div>
                     <div className="line two"></div>
@@ -38,8 +38,8 @@ const Header = (active) =>{
                 </div>
                 <nav className={nav ? "gb-nav open" : "gb-nav"}>
                     <ul>
-                        <li><Link className="nav-link" to="/submission" onClick={()=>toggleNav(false)}>Submission</Link></li>
-                        <li><Link className="nav-link" to="/support" onClick={()=>toggleNav(false)}>Support/FAQ</Link></li>
+                        <li><Link className="nav-link" to="/fonderapp/submission" onClick={()=>toggleNav(false)}>Submission</Link></li>
+                        <li><Link className="nav-link" to="/fonderapp/support" onClick={()=>toggleNav(false)}>Support/FAQ</Link></li>
                     </ul>
                     <div className='mobileApp'>
                         <h4 className="downloadText">Download the App</h4>
