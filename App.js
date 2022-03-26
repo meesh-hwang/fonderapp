@@ -1,26 +1,31 @@
 import * as React from "react";
-import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import {BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import {Helmet} from "react-helmet";
+import {View} from "react";
 import Home from './pages/Home';
-import NotFound from "./pages/NotFound";
 import Support from './pages/Support';
+import Header from './components/Header.js';
 import Submission from "./pages/Submission";
+import Footer from "./components/Footer";
 import "./css/reset.css";
 import "./css/main.css";
-import Header from './components/Header';
 
 
 const App = () => {
   return (
-      <Router>
-        <Header />
+      <BrowserRouter forceRefresh={true}>
+      <Header/>
+      <Helmet>
+                <meta charSet="utf-8" />
+                <title>Fonder</title>
+        </Helmet>
         <Routes>
-          <Route exact path="/fonderapp/" element={<Home />} />
-          <Route path="fonderapp/support" element={<Support />} />
-          <Route path="fonderapp/submission" element={<Submission />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/fonderapp/" element={<Home />} />
+          <Route path="/fonderapp/support" element={<Support />} />
+          <Route path="/fonderapp/submission" element={<Submission/>} />
         </Routes>
-      </Router>
+        <Footer />
+      </BrowserRouter>
   );
 }
 
