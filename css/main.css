@@ -302,10 +302,10 @@ div.mobileDownloadApp.mobile img{
 /* Banner */
 
 .banner-wrapper {
-    height:100%;
+    height: 100%;
 }
 .banner{
-    height: 80vh;
+    height: calc(85vh - 60px);
     padding: 50px 10vw 0;
 }
 .banner .left-col{
@@ -345,7 +345,7 @@ div.mobileDownloadApp.mobile img{
 
 /* mobile banner */
 .banner.mobile{
-    height: calc(100vh - 90px);
+    height: calc(85vh - 80px);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -420,10 +420,9 @@ div.mobileDownloadApp.mobile img{
 
 .banner.laptop{
     padding: 50px 5vw 0;
-    height:90vh;
+    height:calc(100vh - 100px);
     overflow: hidden;
     display:flex;
-    align-items: space-between;
 }
 .banner.laptop .left-col{
     display: flex;
@@ -439,7 +438,7 @@ div.mobileDownloadApp.mobile img{
     position: relative;
 }
 
-.banner.laptop .right-col::after{
+/* .banner.laptop .right-col::after{
     content: "";
     position: absolute;
     top: 80%;
@@ -451,7 +450,7 @@ div.mobileDownloadApp.mobile img{
     -webkit-transform: rotate(-7deg);
     -moz-transform: rotate(-7deg);
     transform: rotate(-7deg);
-}
+} */
 .banner.laptop h2{
     font-size: 55px;
     font-weight: 700;
@@ -485,11 +484,13 @@ div.mobileDownloadApp.mobile img{
 
 .banner.desktop{
     padding: 25px 10vw 0;
-    max-height:100vh;
-    min-height: 90vh;
+    height: calc(100vh - 110px);
     overflow: hidden;
     display:flex;
     align-items: space-between;
+}
+.banner.desktop .banner-wrapper {
+    height: calc(100vh - 110px);
 }
 .banner.desktop .left-col{
     display: flex;
@@ -504,19 +505,11 @@ div.mobileDownloadApp.mobile img{
     align-items: flex-end;
     position: relative;
 }
-
-.banner.desktop .right-col::after{
-    content: "";
-    position: absolute;
-    top: 80%;
-    z-index: -1;
-    left: -150%;
-    height: 100%;
-    width: 120vw;
-    background: #fff;
-    -webkit-transform: rotate(-7deg);
-    -moz-transform: rotate(-7deg);
-    transform: rotate(-7deg);
+.banner.desktop img{
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
 }
 .banner.desktop h2{
 
