@@ -33,7 +33,6 @@ const Header = (active) =>{
 
     const [nav, toggleNav] = useState(false);
 
-    console.log(nav);
     return(
         <div style={{maxWidth:'100vw'}}>
 

@@ -73,7 +73,6 @@ const Banner = (active) =>{
             }
             {isLaptop &&
                 <section className='banner laptop'>
-                    <div className='banner-wrapper'></div>
                     <div className='left-col'>
                         <h2>Can't decide what to eat? Just Swipe.</h2>
                         <p>Have you ever felt frustrated and indecisive when deciding what to eat? Fonder can help with that. This Tinder-like food app will feed your eyes first with images of different dishes and from there show the different restaurants that have it. We are partnered with Opentable for quick reservations or if you want the food delivered directly to you, we are also partnered with Ubereats, SkiptheDishes, DoorDash, and FanTuan.</p>

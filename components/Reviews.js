@@ -48,17 +48,15 @@ const Reviews = () => {
      useEffect(() => {
         
         const windowWidth = Dimensions.get('window').width;
-
+            var scrollView =document.querySelector('.review-box').parentElement;
+        
         if(windowWidth<=575){    
-        var scrollView = document.querySelector('.css-view-1dbjc4n.r-flexDirection-18u37iz').firstChild;
             var scrollTo= scrollView.offsetWidth*0.3+8;
             reviews.current.scrollTo({x: scrollTo, animated:false});
         } else if(windowWidth>575 && windowWidth<=767){
-            var scrollView = document.querySelector('.css-view-1dbjc4n.r-flexDirection-18u37iz').firstChild;
             scrollTo=scrollView.offsetWidth*0.3-67;
             reviews.current.scrollTo({x: scrollTo, animated:false});
         } else if(windowWidth>=768 && windowWidth<992){
-            var scrollView = document.querySelector('.css-view-1dbjc4n.r-flexDirection-18u37iz').firstChild;
             scrollTo=scrollView.offsetWidth*0.2+7;
             reviews.current.scrollTo({x: scrollTo, animated:false});
         }else {
