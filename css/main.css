@@ -383,6 +383,7 @@ div.mobileDownloadApp.mobile img{
     display:flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 .banner.tablet .left-col{
     display: flex;
