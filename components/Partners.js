@@ -8,25 +8,16 @@ import uber from '../assets/img/partner-brands/ubereats_logo.svg';
 
 const Partners = () => {
     return(
-        <div className='partners'>
-            <div className='partner-heading'>
-                <h1>Our Partners</h1>
-                <div className='heading-underline'></div>
+        <section className='partners'>
+            <h3>Our Partners</h3>
+            <div className='brands'>
+                <img src={uber} alt="uber logo" />
+                <img src={doordash} alt="doordash logo" />
+                <img src={skip} alt="skip the dishes logo" />
+                <img src={fantuan} alt="fantuan logo" />
+                <img src={open} alt="open table logo" />
             </div>
-            <div className='partner-brands'>
-                <div className="row">
-                    <img src={uber} alt="uber logo" />
-                    <img src={doordash} alt="doordash logo" />
-                </div>
-                <div className='row'>
-                    <img src={skip} alt="skip the dishes logo" />
-                    <img src={fantuan} alt="fantuan logo" />
-                </div>
-                <div className='row'>
-                    <img src={open} alt="open table logo" />
-                </div>
-            </div>
-        </div>
+        </section>
     );
 }
 

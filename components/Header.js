@@ -24,7 +24,7 @@ const Header = (active) =>{
         query: '(min-width: 768px) and (max-width:991px)' 
     });
     const isLaptop = useMediaQuery({
-        query: '(min-width: 992px) and (max-width: 1119px)' 
+        query: '(min-width: 992px) and (max-width: 1199px)' 
     });
     const isDesktop = useMediaQuery({
         query: '(min-width: 1200px)'
@@ -144,9 +144,3 @@ const Header = (active) =>{
     )
 }
 export default Header
-
-
-
-
-
-

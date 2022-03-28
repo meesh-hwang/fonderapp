@@ -942,7 +942,7 @@ div.mobileDownloadApp.mobile img{
 
 /* Partners and Reviews headings */
 
-.partners, .reviews {
+.partners {
     padding: 20px;
 }
 .partners h3, .reviews h3{
@@ -989,73 +989,59 @@ div.mobileDownloadApp.mobile img{
 
 
 /* Reviews */
+.reviews h3{
+    font-weight: 700;
+    font-size: 26px;
+    color:#e66255;
+    z-index: 1;
+    margin: 0 auto 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
 
-.review-heading {
-    margin-bottom: 40px;
+}
+.reviews h3:after {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    background-color: #F9D8D5;
+    content: "";
+    bottom: -10px;
+    width: 80%;
+    height:20px;
+    z-index: -1;
 }
 
 .review-box {
-    min-width: 70vw;
+    min-width: 80vw;
     max-width: 80vw;
     display:'flex';
     flex-direction: 'column';
     align-items: center;
-    margin:auto; 
-    padding-left:20px;
-    padding-right: 20px;
-}
-
-.carousel__inner-slide .review-box {
-    padding-top:35px;
+    margin:20px 12px; 
+    padding: 5px 20px 0px 20px;
     box-shadow: 1px 1px 6px 1px rgba(215, 215, 215, 0.9);
     border-radius: 11px;
 }
-
-.carousel__inner-slide{
+.review-wrapper{
     margin-top:30px;
-}
-
-.review-wrapper {
     display: flex;
-   
     flex-direction:column;
     flex:1;
     align-items: center;
 }
-.carousel-tray {
-    display: flex;
-    justify-content: center;
-}
-
-.sliderTray___-vHFQ, .sliderAnimation___300FY, .carousel__slider-tray, .carousel__slider-tray--horizontal{
-    height:350px;
-    margin-top:40px;
-    display: flex;
-    max-width: 300%;
-    justify-content: center;
-    flex-direction: row;
-    align-items: flex-start; 
-}
-.carousel__slide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 p.review {
     font-family: 'Oranienbaum';
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
-    line-height:20px;
+    line-height:17px;
 }
-
 .reviewer .goldfish {
     max-width: 20px;
     max-height:20px;
     margin-right:8px;
 }
-
 .reviewer p {
     font-family: 'Assistant';
     font-style: normal;
@@ -1063,12 +1049,154 @@ p.review {
     white-space: nowrap;
     font-size:12px;
 }
-
 .reviewer {
     display: flex;
     align-items: center;
     align-self: flex-end;
     padding-top:30px;
+    padding-bottom:20px;
+}
+
+/* Reviews mobile */
+
+.reviews.mobile h3:after {
+    bottom: -10px;
+    width: 60%;
+    height:22px;
+}
+.reviews.mobile h3{
+    font-size: 30px;
+    margin-bottom:5vh;
+}
+.mobile .review-box {
+    min-width: 60vw;
+    max-width: 60vw;
+    margin:20px 12px 10vh 12px; 
+    padding: 10px 30px 0px 30px;
+}
+.mobile p.review {
+    font-size: 16px;
+    line-height:20px;
+}
+.mobile .reviewer .goldfish {
+    max-width: 35px;
+    max-height:35px;
+    margin-right:10px;
+}
+.mobile .reviewer p {
+    font-size:14px;
+}
+.mobile .reviewer {
+    padding-top:35px;
+    padding-bottom:20px;
+}
+
+/* Reviews mobile */
+
+.reviews.tablet h3:after {
+    bottom: -10px;
+    width: 50%;
+    height:24px;
+}
+.reviews.tablet h3{
+    font-size: 34px;
+    margin-bottom:7vh;
+}
+.tablet .review-box {
+    min-width: 50vw;
+    max-width: 50vw;
+    margin:20px 25px 13vh 25px; 
+    padding: 15px 35px 0px 35px;
+}
+.tablet p.review {
+    font-size: 18px;
+    line-height:23px;
+}
+.tablet .reviewer .goldfish {
+    max-width: 45px;
+    max-height:45px;
+    margin-right:15px;
+}
+.tablet .reviewer p {
+    font-size:14px;
+}
+.tablet .reviewer {
+    padding-top:40px;
+    padding-bottom:20px;
+}
+
+/* Reviews laptop */
+.reviews.laptop .row {
+    display:flex;
+    justify-content:space-between;
+    padding: 0 30px;
+}
+.reviews.laptop h3:after {
+    bottom: -10px;
+    width: 40%;
+    height:24px;
+}
+.reviews.laptop h3{
+    font-size: 38px;
+    margin-bottom:7vh;
+}
+.laptop .review-box {
+    margin:20px 15px 13vh 15px; 
+    min-width: 28vw;
+    max-width: 28vw;
+    padding: 15px 20px 0px 25px;
+}
+.laptop p.review {
+    font-size: 17px;
+    line-height:23px;
+}
+.laptop .reviewer .goldfish {
+    max-width: 45px;
+    max-height:45px;
+    margin-right:15px;
+}
+.laptop .reviewer p {
+    font-size:12px;
+}
+.laptop .reviewer {
+    padding-top:40px;
+    padding-bottom:20px;
+}
+/* Reviews desktop */
+.reviews.desktop .row {
+    display:flex;
+    justify-content:space-between;
+    padding: 0 30px;
+}
+.reviews.desktop h3:after {
+    bottom: -10px;
+    width: 40%;
+    height:24px;
+}
+.reviews.desktop h3{
+    font-size: 38px;
+    margin-bottom:7vh;
+}
+.desktop .review-box {
+    margin:20px 15px 13vh 15px; 
+    min-width: 28vw;
+    max-width: 28vw;
+    padding: 15px 20px 0px 25px;
+}
+.desktop p.review {
+    font-size: 17px;
+    line-height:23px;
+}
+.desktop .reviewer .goldfish {
+    max-width: 45px;
+    max-height:45px;
+    margin-right:15px;
+}
+.desktop .reviewer p {
+    font-size:12px;
+}
+.desktop .reviewer {
+    padding-top:40px;
     padding-bottom:20px;
 }
 
