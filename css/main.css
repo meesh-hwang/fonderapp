@@ -621,12 +621,14 @@ div.mobileDownloadApp.mobile img{
 
 .features.desktop{
     display: flex;
-    padding: 50px 10vw;
+    padding: 100px 10vw;
 }
 .features.desktop .item{
     padding: 35px 50px;
     width: 33.33%;
     background: transparent;
+    display: flex;
+    flex-direction: column;
 }
 .features.desktop .item .row{
     flex-direction: column;
@@ -635,6 +637,7 @@ div.mobileDownloadApp.mobile img{
     font-size: 48px;
     margin-bottom: 30px;
     width: 100%;
+    flex-basis: 25%;
 }
 .features.desktop img{
     width: 75%;
