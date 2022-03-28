@@ -24,7 +24,7 @@ const Review = (item) => {
 }
 
 const Reviews = () => {
-    const windowWidth = Dimensions.get('window').width;
+
     // media queries
     const isXMobile = useMediaQuery({
         query: '(max-width: 575px)' 
@@ -51,12 +51,14 @@ const Reviews = () => {
 
         if(windowWidth<=575){    
         var scrollView = document.querySelector('.css-view-1dbjc4n.r-flexDirection-18u37iz').firstChild;
-            var scrollTo= scrollView.offsetWidth*0.3+6;
+            var scrollTo= scrollView.offsetWidth*0.3+8;
             reviews.current.scrollTo({x: scrollTo, animated:false});
         } else if(windowWidth>575 && windowWidth<=767){
+            var scrollView = document.querySelector('.css-view-1dbjc4n.r-flexDirection-18u37iz').firstChild;
             scrollTo=scrollView.offsetWidth*0.3-67;
             reviews.current.scrollTo({x: scrollTo, animated:false});
-        } else if(windowWidth>768 && windowWidth<992){
+        } else if(windowWidth>=768 && windowWidth<992){
+            var scrollView = document.querySelector('.css-view-1dbjc4n.r-flexDirection-18u37iz').firstChild;
             scrollTo=scrollView.offsetWidth*0.2+7;
             reviews.current.scrollTo({x: scrollTo, animated:false});
         }else {
