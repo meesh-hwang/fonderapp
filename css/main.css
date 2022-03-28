@@ -564,7 +564,7 @@ div.mobileDownloadApp.mobile img{
     justify-content: space-between;
 }
 .item .row .left-col{
-    flex-basis: 35%;
+    flex-basis: 50%;
 }
 .item .row .right-col{
     flex-basis: 50%;
@@ -576,9 +576,93 @@ div.mobileDownloadApp.mobile img{
     font-size: 20px;
     margin-bottom: 15px;
     color: #e66255;
+    display: block;
+    width: 50%;
+    text-align: center;
 }
 .features img{
     width: 50%;
+}
+
+.features.mobile .item{
+    padding: 30px;
+}
+.features.mobile h4{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.features.mobile p{
+    font-size: 18px;
+}
+
+.features.tablet .item{
+    padding: 35px 50px;
+
+}
+.features.tablet h4{
+    font-size: 36px;
+    width: 350px;
+    margin-bottom: 20px;
+}
+.features.tablet p{
+    font-size: 24px;
+}
+
+.features.laptop{
+    display: flex;
+    padding: 20px 0;
+}
+.features.laptop .item{
+    padding: 35px 50px;
+    width: 33.33%;
+    background: transparent;
+}
+.features.laptop .item .row{
+    flex-direction: column;
+}
+.features.laptop h4{
+    font-size: 32px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.features.laptop img{
+    width: 75%;
+    margin-bottom: 15px;
+}
+.features.laptop p{
+    font-size: 18px;
+}
+
+.features.desktop{
+    display: flex;
+    padding: 50px 10vw;
+}
+.features.desktop .item{
+    padding: 35px 50px;
+    width: 33.33%;
+    background: transparent;
+}
+.features.desktop .item .row{
+    flex-direction: column;
+}
+.features.desktop h4{
+    font-size: 48px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+.features.desktop img{
+    width: 75%;
+    margin-bottom: 30px;
+}
+.features.desktop p{
+    font-size: 24px;
+}
+
+.css-view-1dbjc4n{
+    position: static;
+}
+.features img{
+    max-width: 350px;
 }
 
 
