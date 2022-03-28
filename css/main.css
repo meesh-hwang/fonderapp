@@ -379,11 +379,10 @@ div.mobileDownloadApp.mobile img{
 .banner.tablet{
     padding: 25px 10vw 0;
     height: calc(100vh - 90px);
-    overflow: hidden;
     display:flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 .banner.tablet .left-col{
     display: flex;
@@ -393,7 +392,6 @@ div.mobileDownloadApp.mobile img{
 .banner.tablet h2{
     font-size: 36px;
     text-align: center;
-    position: static;
     margin-top: 30px;
     margin-bottom: 30px;
     line-height: 1.2;
@@ -437,6 +435,7 @@ div.mobileDownloadApp.mobile img{
 .banner.laptop .right-col {
     flex:1.2;
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-end;
     position: relative;
 }
@@ -474,6 +473,7 @@ div.mobileDownloadApp.mobile img{
 .banner.desktop{
     padding: 25px 10vw 0;
     height: calc(100vh - 110px);
+    flex-wrap: wrap;
     overflow: hidden;
     display:flex;
     align-items: space-between;
@@ -497,11 +497,9 @@ div.mobileDownloadApp.mobile img{
 .banner.desktop img{
     max-height: 100%;
     width: 100%;
-    display: flex;
-    align-items: flex-end;
 }
 .banner.desktop h2{
-
+    margin-top:30px;
     font-size: 65px;
     font-weight: 700;
     text-align: left;
@@ -563,25 +561,36 @@ div.mobileDownloadApp.mobile img{
 }
 .features h4{
     font-size: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    margin-left:5%;
     color: #e66255;
     display: block;
-    width: 50%;
-    text-align: center;
+    width: 100%;
+    text-align: left;
+}
+.features p {
+    font-size: 12px;
 }
 .features img{
-    width: 50%;
+    width: 40%;
+    max-height: 200px;
+    object-fit: contain;
 }
 
+/*features mobile*/
 .features.mobile .item{
-    padding: 30px;
+    padding: 26px;
 }
 .features.mobile h4{
     font-size: 30px;
+    margin-left:7%;
     margin-bottom: 20px;
 }
 .features.mobile p{
     font-size: 18px;
+}
+.features.mobile img{
+    max-height: 200px;
 }
 
 .features.tablet .item{
@@ -589,12 +598,16 @@ div.mobileDownloadApp.mobile img{
 
 }
 .features.tablet h4{
-    font-size: 36px;
+    font-size: 30px;
     width: 350px;
+    margin-left:10%;
     margin-bottom: 20px;
 }
 .features.tablet p{
-    font-size: 24px;
+    font-size: 20px;
+}
+.features.tablet img {
+    max-height: 220px;
 }
 
 .features.laptop{
@@ -613,13 +626,20 @@ div.mobileDownloadApp.mobile img{
     font-size: 32px;
     margin-bottom: 20px;
     width: 100%;
+    margin-left:0;
+    text-align: center;
 }
 .features.laptop img{
     width: 75%;
     margin-bottom: 15px;
+    padding: 10px 0;
 }
 .features.laptop p{
     font-size: 18px;
+}
+
+.features.laptop img{
+    max-height: 240px;
 }
 
 .features.desktop{
@@ -637,10 +657,11 @@ div.mobileDownloadApp.mobile img{
     flex-direction: column;
 }
 .features.desktop h4{
-    font-size: 48px;
-    margin-bottom: 30px;
+    font-size: 40px;
+    margin-bottom: 40px;
     width: 100%;
-    flex-basis: 25%;
+    margin-left:0;
+    text-align: center;
 }
 .features.desktop img{
     width: 75%;
@@ -650,17 +671,14 @@ div.mobileDownloadApp.mobile img{
     font-size: 24px;
 }
 
-.css-view-1dbjc4n{
-    position: static;
+.features.desktop img{
+    max-height: 240px;
 }
-.features img{
-    max-width: 350px;
-}
-
 
 .css-view-1dbjc4n{
     position: static;
 }
+
 .css-1dbjc4n{
     position: static;
 }
@@ -941,6 +959,105 @@ div.mobileDownloadApp.mobile img{
     color: #fff;
 }
 
+/*Footer mobile*/
+.main-ft.mobile{
+    padding: 3vh 3vw;
+    color: #fff;
+  }
+.main-ft.mobile h3 {
+    font-size: 20px;
+}
+.main-ft.mobile .download-btns{
+    display:flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.main-ft.mobile .download-btns img {
+    padding: 0 5px;
+    height: 30px;
+}
+.main-ft.mobile p {
+    font-size: 12px;
+    line-height: 15px;
+}
+.main-ft.mobile a {
+    margin-top:10px;
+    font-size: 9px;
+}
+
+
+/*Footer tablet*/
+.main-ft.tablet{
+    padding: 4vh 3vw;
+  }
+.main-ft.tablet h3 {
+    font-size: 20px;
+}
+.main-ft.tablet .download-btns{
+    margin: 20px 0;
+}
+.main-ft.tablet .download-btns img {
+    padding: 0 5px;
+    height: 35px;
+}
+.main-ft.tablet p {
+    font-size: 13px;
+    line-height: 16px;
+}
+.main-ft.tablet a {
+    margin-top:11px;
+    font-size: 10px;
+}
+
+
+/*Footer laptop*/
+.main-ft.laptop{
+    padding: 5vh 3vw;
+  }
+.main-ft.laptop h3 {
+    font-size: 22px;
+    line-height: 26px;
+}
+.main-ft.laptop .download-btns{
+    margin: 25px 0;
+}
+.main-ft.laptop .download-btns img {
+    padding: 0 7px;
+    height: 35px;
+}
+.main-ft.laptop p {
+    font-size: 14px;
+    line-height: 16px;
+}
+.main-ft.laptop a {
+    font-size: 10px;
+    line-height: 12px;
+}
+
+
+/*Footer mobile*/
+.main-ft.desktop{
+    padding: 6vh 3vw;
+  }
+.main-ft.desktop h3 {
+    font-size: 24px;
+    line-height: 27px;
+}
+.main-ft.desktop .download-btns{
+    margin: 15px 0;
+}
+.main-ft.desktop .download-btns img {
+    padding: 0 10px;
+    height: 40px;
+}
+.main-ft.desktop p {
+    font-size: 15px;
+    line-height: 18px;
+}
+.main-ft.desktop a {
+    margin-top:12px;
+    font-size: 11px;
+}
 
 
 /* Partners and Reviews headings */
