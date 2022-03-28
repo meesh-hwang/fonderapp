@@ -14,11 +14,21 @@ const Header = (active) =>{
 
 
     // media queries
-    const isXMobile = useMediaQuery({ query: '(max-width: 575px)' });
-    const isMobile = useMediaQuery({ query: '(min-width: 576px) and (max-width:767px)' });
-    const isTablet = useMediaQuery({ query: '(min-width: 768px) and (max-width:1023px)' });
-    const isLaptop = useMediaQuery({ query: '(min-width: 1024px) and (max-width: 1280px)' });
-    const isDesktop = useMediaQuery({ query: '(min-width: 1281px)'});
+    const isXMobile = useMediaQuery({
+        query: '(max-width: 575px)' 
+    });
+    const isMobile = useMediaQuery({
+        query: '(min-width: 576px) and (max-width:767px)' 
+    });
+    const isTablet = useMediaQuery({ 
+        query: '(min-width: 768px) and (max-width:991px)' 
+    });
+    const isLaptop = useMediaQuery({
+        query: '(min-width: 992px) and (max-width: 1119px)' 
+    });
+    const isDesktop = useMediaQuery({
+        query: '(min-width: 1200px)'
+    });
 
 
     const [nav, toggleNav] = useState(false);
