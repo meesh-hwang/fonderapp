@@ -1,4 +1,4 @@
-import {View} from 'react-native-web';
+import {View} from 'react-native';
 import {Helmet} from "react-helmet";
 import { useMediaQuery } from 'react-responsive';
 
@@ -32,7 +32,7 @@ const Submission = () =>{
         <Helmet>
                 <meta charSet="utf-8" />
                 <title>Fonder</title>
-                <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&family=Oranienbaum&family=Shrikhand&display=swap" rel="stylesheet"/>
+                <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&family=Oranienbaum&family=Poppins:wght@600&family=Shrikhand&display=swap" rel="stylesheet"/>
         </Helmet>
 
         {isXMobile && 

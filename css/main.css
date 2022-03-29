@@ -327,7 +327,10 @@ div.mobileDownloadApp.mobile img{
     font-family: 'Oranienbaum', serif;
     font-weight: 500;
 }
-.banner img{
+/* .banner img{
+    width: 100%;
+} */
+.banner .right-col.home-banner-img{
     width: 100%;
 }
 .banner .hero-download{
@@ -349,7 +352,6 @@ div.mobileDownloadApp.mobile img{
 .banner.mobile{
     height: calc(85vh - 80px);
     overflow: hidden;
-    justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -364,10 +366,9 @@ div.mobileDownloadApp.mobile img{
     line-height: 1.3;
     text-align: center;
 }
-.banner.mobile img{
-    width: 70%;
+/* .banner.mobile img{
     margin: 0 auto;
-}
+} */
 .banner.mobile .hero-download{
     display: flex;
     align-items: center;
@@ -376,7 +377,6 @@ div.mobileDownloadApp.mobile img{
 }
 .banner.mobile .hero-download img{
     height: 35px;
-    width:100%;
 }
 /* tablet banner */
 .banner.tablet{
@@ -404,9 +404,6 @@ div.mobileDownloadApp.mobile img{
     width:87%;
     text-align: center;
 }
-.banner.tablet img{
-    width: 70%;
-}
 .banner.tablet .hero-download{
     display: flex;
     align-items: center;
@@ -417,8 +414,7 @@ div.mobileDownloadApp.mobile img{
     margin: 15px 10px;
 }
 .banner.tablet .hero-download img{
-    min-height: 40px;
-    width:100%;
+    height: 40px;
 }
 /* laptop.laptop banner */
 
@@ -443,7 +439,7 @@ div.mobileDownloadApp.mobile img{
     position: relative;
 }
 .banner.laptop h2{
-    font-size: 55px;
+    font-size: 48px;
     font-weight: 700;
     text-align: left;
     margin-bottom: 20px;
@@ -455,7 +451,6 @@ div.mobileDownloadApp.mobile img{
     line-height: 1.2;
 }
 .banner.laptop img{
-    width: 100%;
     object-fit: contain;
 }
 .banner.laptop .hero-download{
@@ -468,8 +463,11 @@ div.mobileDownloadApp.mobile img{
     margin: 0px 20px;
 }
 .banner.laptop .hero-download img{
-    min-height: 55px;
-    width:85%;
+    height: 40px;
+}
+.banner.laptop .home-banner-img{
+    width: 100%;
+    max-height: 100%;
 }
 .banner.laptop .right-col::after{
     content: "";
@@ -522,6 +520,7 @@ div.mobileDownloadApp.mobile img{
     display: flex;
     align-items: flex-end;
     position: relative;
+    height: 100%;
 }
 .banner.desktop img{
     max-height: 100%;
@@ -529,7 +528,7 @@ div.mobileDownloadApp.mobile img{
 }
 .banner.desktop h2{
     margin-top:30px;
-    font-size: 65px;
+    font-size: 50px;
     font-weight: 700;
     text-align: left;
     margin-bottom: 20px;
@@ -558,9 +557,8 @@ div.mobileDownloadApp.mobile img{
     margin: 15px 20px;
 }
 .banner.desktop .hero-download img{
-    min-height: 60px;
-    max-height: 60px;
-    width:100%;
+    height: 50px;
+    width: auto;
 } 
 
 /* Features */
@@ -591,7 +589,6 @@ div.mobileDownloadApp.mobile img{
 .features h4{
     font-size: 20px;
     margin-bottom: 20px;
-    margin-left:5%;
     color: #e66255;
     display: block;
     width: 100%;
@@ -628,7 +625,7 @@ div.mobileDownloadApp.mobile img{
 }
 .features.tablet h4{
     font-size: 30px;
-    width: 350px;
+    width: 50%;
     margin-left:10%;
     margin-bottom: 20px;
 }
@@ -1445,14 +1442,14 @@ p.review {
 .submission-banner {
     background-image: linear-gradient(0deg, rgba(255,246,229,1) 0%, rgba(230,98,85,1) 100%);
     flex-direction: column;
-    padding: 50px;
     display: flex;
     align-items: center;
 }
 
 .submission-banner img {
     background-size: fill;
-    min-width: 50vw;
+    width: 80%;
+    margin: 30px 0;
     background-repeat: no-repeat;
     background-position: center top;
     object-fit:cover;
@@ -1470,10 +1467,14 @@ p.review {
 
 .submission-banner.laptop img {
     height: 750px;
+    width: 100%;
+    margin: 0;
 }
 
 .submission-banner.desktop img {
     height: 800px;
+    margin: 0;
+    width: 100%;
 }
 
 .submission-banner.laptop {
