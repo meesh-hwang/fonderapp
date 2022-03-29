@@ -27,8 +27,8 @@ p{
     height: 100vh;
     width: 100vw;
     background: rgb(255,229,180);
-    background: linear-gradient(0deg, rgba(255,246,229,1) 0%, rgba(230,98,85,1) 100%);
     background: -webkit-linear-gradient(0deg, rgba(255,246,229,1) 0%, rgba(230,98,85,1) 100%);
+    background: linear-gradient(0deg, rgba(255,246,229,1) 0%, rgba(230,98,85,1) 100%);
 }
 
 .vhWrapper-tablet{
@@ -40,8 +40,8 @@ p{
     left: 0;
     width: 100%;
     background: rgb(255,229,180);
-    background: linear-gradient(0deg, rgba(255,246,229,1) 0%, rgba(230,98,85,1) 100%);
     background: -webkit-linear-gradient(0deg, rgba(255,246,229,1) 0%, rgba(230,98,85,1) 100%);
+    background: linear-gradient(0deg, rgba(255,246,229,1) 0%, rgba(230,98,85,1) 100%);
 }
 /* Header */
 
@@ -715,8 +715,8 @@ div.mobileDownloadApp.mobile img{
 
 /* ------------ SUPPORT PAGE -------------- */
 .support-banner{
-    background-image: linear-gradient(to bottom, rgba(255,246,229,.3), rgba(230,98,85,.3)), url('../assets/img/support-hero.png');
-    background-image: -webkit-linear-gradient(to bottom, rgba(255,246,229,.3), rgba(230,98,85,.3)), url('../assets/img/support-hero.png');
+    background-image: -webkit-linear-gradient(to bottom, rgba(255,246,229,.3), rgba(230,98,85,.3)), url('../assets/img/support-hero.webp');
+    background-image: linear-gradient(to bottom, rgba(255,246,229,.3), rgba(230,98,85,.3)), url('../assets/img/support-hero.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
@@ -1428,4 +1428,171 @@ p.review {
 /* Desktop Devices */
 @media (min-width: 1200px){
 
+}
+
+/* ------------ SUBMISSION PAGE -------------- */
+
+.flex-submission {
+    display: flex;
+    flex-direction: row;
+}
+
+.sub-form {
+    margin: 0 auto;
+}
+
+.submission-banner {
+    background-image: linear-gradient(0deg, rgba(255,246,229,1) 0%, rgba(230,98,85,1) 100%);
+    flex-direction: column;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.submission-banner img {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    object-fit: contain;
+    height: 400px;
+}
+
+.submission-banner.mobile img {
+    height: 450px;
+}
+
+.submission-banner.tablet img{
+    height: 500px;
+}
+
+.submission-banner.laptop img {
+    height: 750px;
+}
+
+.submission-banner.desktop img {
+    height: 800px;
+}
+
+.submission-banner.laptop {
+    padding: 0;
+}
+
+.submission-banner.desktop {
+    padding: 0;
+}
+
+
+.theme-color {
+    color: #e66255;
+}
+
+.submission-form .submission-heading {
+    font-family: 'Assistant', sans-serif;
+    text-align: center;
+    line-height: 1.5;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.submission-form .submission-heading .suggestions {
+    font-size: 20px;
+}
+
+.submission-form .submission-heading .help-make-app {
+    font-size: 25px;
+}
+
+.entry-form .submit-btn {
+    margin: 10px auto;
+    display: block;
+    border-radius: 20px;
+    background-image: linear-gradient(0deg, rgba(255,246,229,1) 0%, rgba(230,98,85,1) 100%);
+    margin-bottom: 50px;
+    padding: 8px 12px;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
+.entry-form div h4 {
+    font-size: 15px;
+}
+
+.entry-form {
+    padding: 10px;
+    padding-top: 0px;
+}
+
+.entry-form div{
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.entry-form div textarea[type=text], select {
+    width: 100%;
+    padding: 6px 10px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 2px;
+    box-sizing: border-box;
+  }
+
+
+.submission-heading.mobile, .submission-heading.tablet {
+    font-size: 20px;
+}
+.submission-heading.laptop, .submission-heading.desktop{
+    font-size: 25px;
+}
+
+.submission-form #dishes {
+    width: 100%;
+}
+
+.submission-form.mobile #dishes, .submission-form.tablet #dishes {
+    width: 100%;
+}
+
+
+.submission-form.laptop #dishes, .submission-form.desktop #dishes {
+    width: 100%;
+}
+input::placeholder{
+    font-family: 'Assistant';
+    color:#e66255;
+}
+
+.entry-form .agree-box h3 {
+    padding-left: 10px;
+}
+
+.submission-form div div {
+    padding: 10px;
+}
+.submission-form .agree-box {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.entry-form .agree-box h3 {
+    padding-left: 10px;
+}
+
+#terms-n-conditions{
+    height:20px;
+    width: 20px;
+}
+
+#terms-n-conditions[type="checkbox"]:before{
+    width: 20px;
+    height: 20px;
+}
+#terms-n-conditions[type="checkbox"]:after{
+    top: -20px;
+    width: 16px;
+    height: 16px;
 }
