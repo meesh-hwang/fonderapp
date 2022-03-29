@@ -24,7 +24,7 @@ const SubmissionForm = () =>{
     })
 
     return(
-        <div style={{maxWidth: '100vw'}}>
+        <div style={{flexBasis:'50%'}}>
         {isXMobile &&
             <section className='submission-form'>
                 <div className='submission-heading'>
@@ -32,7 +32,7 @@ const SubmissionForm = () =>{
                 <h3 className='help-make-app'>Help us make this app a little <span className="theme-color">Fonder!</span></h3>
                 </div>
 
-                <form action='submit.php' method='get'>
+                <form className='entry-form' action='submit.php' method='get'>
 
                     <div className='custom-selection'>
                     <h4>Cuisine</h4>
@@ -79,7 +79,7 @@ const SubmissionForm = () =>{
                 <h3 className='help-make-app'>Help us make this app a little <span className="theme-color">Fonder!</span></h3>
                 </div>
 
-                <form action='submit.php' method='get'>
+                <form className='entry-form' action='submit.php' method='get'>
 
                     <div className='custom-selection'>
                     <h4>Cuisine</h4>
@@ -126,7 +126,7 @@ const SubmissionForm = () =>{
                 <h3 className='help-make-app'>Help us make this app a little <span className="theme-color">Fonder!</span></h3>
                 </div>
 
-                <form action='submit.php' method='get'>
+                <form className='entry-form' action='submit.php' method='get'>
 
 <div className='custom-selection'>
 <h4>Cuisine</h4>
@@ -173,7 +173,7 @@ const SubmissionForm = () =>{
                 <h3 className='help-make-app'>Help us make this app a little <span className="theme-color">Fonder!</span></h3>
                 </div>
                 
-                <form action='submit.php' method='get'>
+                <form className='entry-form' action='submit.php' method='get'>
 
 <div className='custom-selection'>
 <h4>Cuisine</h4>
@@ -220,7 +220,7 @@ const SubmissionForm = () =>{
                 <h3 className='help-make-app'>Help us make this app a little <span className="theme-color">Fonder!</span></h3>
                 </div>
 
-                <form action='submit.php' method='get'>
+                <form className='entry-form' action='submit.php' method='get'>
 
 <div className='custom-selection'>
 <h4>Cuisine</h4>

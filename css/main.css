@@ -1435,6 +1435,7 @@ p.review {
 .flex-submission {
     display: flex;
     flex-direction: row;
+    
 }
 
 .sub-form {
@@ -1450,10 +1451,12 @@ p.review {
 }
 
 .submission-banner img {
-    background-size: contain;
+    background-size: fill;
+    min-width: 50vw;
     background-repeat: no-repeat;
     background-position: center top;
-    object-fit: contain;
+    object-fit:cover;
+    object-position: top;
     height: 400px;
 }
 
@@ -1559,20 +1562,23 @@ justify-content: center;
 .submission-form.laptop #dishes, .submission-form.desktop #dishes {
     width: 100%;
 }
-input::placeholder{
+form input::placeholder{
     font-family: 'Assistant';
     color:#e66255;
 }
-
+.entry-form div {
+    padding: 10px 0;
+}
 .entry-form .agree-box h3 {
     padding-left: 10px;
+    font-weight: 600;
 }
 
-.submission-form div div {
-    padding: 10px;
+.submission-form .entry-form{
+    padding: 20px 5vw;
 }
 .submission-form .agree-box {
-    justify-content: center;
+    justify-content: flex-start;
     display: flex;
     align-items: center;
     flex-direction: row;

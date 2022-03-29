@@ -25,39 +25,30 @@ const SubmissionBanner = () =>{
     })
 
     return(
-        <div style={{maxWidth: '100vw'}}>
+        <div style={{flexBasis:'50%'}}>
         {isXMobile &&
             <section className='submission-banner'>
-                {/* <h3>Have Suggestions?</h3>
-                <h3>Help us make this app a little Fonder!</h3> */}
                 <img src={banner} alt="" />
             </section>
         }
         {isMobile &&
             <section className='submission-banner mobile'>
-                {/* <h3>Have Suggestions?</h3>
-                <h3>Help us make this app a little Fonder!</h3> */}
+               
                 <img src={banner} alt="" />
             </section>
         }
         {isTablet &&
             <section className='submission-banner tablet'>
-                {/* <h3>Have Suggestions?</h3>
-                <h3>Help us make this app a little Fonder!</h3> */}
                 <img src={banner} alt="" />
             </section>
         }
         {isLaptop &&
             <section className='submission-banner laptop'>
-                {/* <h3>Have Suggestions?</h3>
-                <h3>Help us make this app a little Fonder!</h3> */}
                 <img src={banner} alt="" />
             </section>
         }
         {isDesktop &&
             <section className='submission-banner desktop'>
-                {/* <h3>Have Suggestions?</h3>
-                <h3>Help us make this app a little Fonder!</h3> */}
                 <img src={banner} alt="" />
             </section>
         }
