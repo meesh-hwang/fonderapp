@@ -1542,7 +1542,24 @@ justify-content: center;
     border-radius: 2px;
     box-sizing: border-box;
   }
-
+.entry-form input[type="file"] {
+    display: none;
+}
+.entry-form .custom-file-upload {
+    border: 1px solid #000;
+    display: inline-flex;
+    cursor: pointer;
+    padding: 20px;
+    font-family: 'Assistant', sans-serif;
+    height: 75px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+}
+.entry-form .custom-file-upload img{
+    height: 50%;
+    margin-left: 5px;
+}
 
 .submission-heading.mobile, .submission-heading.tablet {
     font-size: 20px;
@@ -1603,3 +1620,5 @@ form input::placeholder{
     width: 16px;
     height: 16px;
 }
+
+
