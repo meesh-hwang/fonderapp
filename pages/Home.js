@@ -1,12 +1,11 @@
 import React from 'react'
 import { useMediaQuery } from 'react-responsive'
 
-import {View, Text} from 'react-native';
+import {View} from 'react-native-web';
 import {Helmet} from "react-helmet";
 import Banner from "../components/Banner";
 import Features from "../components/Features";
 import Partners from '../components/Partners';
-import Footer from "../components/Footer";
 import Reviews from '../components/Reviews';
 
 import '../css/reset.css';
