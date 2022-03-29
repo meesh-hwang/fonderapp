@@ -33,7 +33,6 @@ const Submission = () =>{
                 <meta charSet="utf-8" />
                 <title>Fonder</title>
                 <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&family=Oranienbaum&family=Poppins:wght@600&family=Shrikhand&display=swap" rel="stylesheet"/>
-                <script src="https://kit.fontawesome.com/68e4d43405.js" crossorigin="anonymous"></script>
         </Helmet>
 
         {isXMobile && 
