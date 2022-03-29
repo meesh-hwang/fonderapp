@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import { useMediaQuery } from 'react-responsive';
 import uploadIcon from '../assets/img/upload-icon.svg';
 
@@ -24,6 +24,17 @@ const SubmissionForm = () => {
         query: '(min-width: 1200px)'
     })
 
+    const [tags, setTags]=useState("");
+
+function handleSubmit(e) {
+    e.preventDefault();
+    var formData = new FormData(e.target)
+    var dishTags = formData.get('dish-tags')
+    console.log(dishTags)
+    setTags(dishTags)
+
+  }
+
     return (
         <div style={{ flexBasis: '50%' }}>
             {isXMobile &&
@@ -33,7 +44,7 @@ const SubmissionForm = () => {
                         <h3 className='help-make-app'>Help us make this app a little <span className="theme-color">Fonder!</span></h3>
                     </div>
 
-                    <form className='entry-form' action='submit.php' method='get'>
+                    <form onSubmit={handleSubmit} className='entry-form' action='submit.php' method='get'>
 
                         <div className='custom-selection'>
                             <h4>Cuisine</h4>
@@ -68,7 +79,7 @@ const SubmissionForm = () => {
 
                         <div>
                             <h4>Tags</h4>
-                            <textarea required id="dish-tags" type="text" cols="40" rows="5" placeholder="Ex. pasta, marinara, italian, vegetarian"></textarea>
+                            <textarea required name="dish-tags" id="dish-tags" type="text" cols="40" rows="5" placeholder="Ex. pasta, marinara, italian, vegetarian"></textarea>
                         </div>
 
                         <div>
@@ -96,7 +107,7 @@ const SubmissionForm = () => {
                         <h3 className='help-make-app'>Help us make this app a little <span className="theme-color">Fonder!</span></h3>
                     </div>
 
-                    <form className='entry-form' action='submit.php' method='get'>
+                    <form onSubmit={handleSubmit} className='entry-form' action='submit.php' method='get'>
 
                     <div className='custom-selection'>
                             <h4>Cuisine</h4>
@@ -131,7 +142,7 @@ const SubmissionForm = () => {
 
                         <div>
                             <h4>Tags</h4>
-                            <textarea required id="dish-tags" type="text" cols="40" rows="5" placeholder="Ex. pasta, marinara, italian, vegetarian"></textarea>
+                            <textarea required name="dish-tags" id="dish-tags" type="text" cols="40" rows="5" placeholder="Ex. pasta, marinara, italian, vegetarian"></textarea>
                         </div>
 
                         <div>
@@ -159,7 +170,7 @@ const SubmissionForm = () => {
                         <h3 className='help-make-app'>Help us make this app a little <span className="theme-color">Fonder!</span></h3>
                     </div>
 
-                    <form className='entry-form' action='submit.php' method='get'>
+                    <form onSubmit={handleSubmit} className='entry-form' action='submit.php' method='get'>
 
                     <div className='custom-selection'>
                             <h4>Cuisine</h4>
@@ -194,7 +205,7 @@ const SubmissionForm = () => {
 
                         <div>
                             <h4>Tags</h4>
-                            <textarea required id="dish-tags" type="text" cols="40" rows="5" placeholder="Ex. pasta, marinara, italian, vegetarian"></textarea>
+                            <textarea required name="dish-tags" id="dish-tags" type="text" cols="40" rows="5" placeholder="Ex. pasta, marinara, italian, vegetarian"></textarea>
                         </div>
 
                         <div>
@@ -222,7 +233,7 @@ const SubmissionForm = () => {
                         <h3 className='help-make-app'>Help us make this app a little <span className="theme-color">Fonder!</span></h3>
                     </div>
 
-                    <form className='entry-form' action='submit.php' method='get'>
+                    <form onSubmit={handleSubmit} className='entry-form' action='submit.php' method='get'>
 
                     <div className='custom-selection'>
                             <h4>Cuisine</h4>
@@ -257,7 +268,7 @@ const SubmissionForm = () => {
 
                         <div>
                             <h4>Tags</h4>
-                            <textarea required id="dish-tags" type="text" cols="40" rows="5" placeholder="Ex. pasta, marinara, italian, vegetarian"></textarea>
+                            <textarea required name="dish-tags" id="dish-tags" type="text" cols="40" rows="5" placeholder="Ex. pasta, marinara, italian, vegetarian"></textarea>
                         </div>
 
                         <div>
@@ -285,7 +296,7 @@ const SubmissionForm = () => {
                         <h3 className='help-make-app'>Help us make this app a little <span className="theme-color">Fonder!</span></h3>
                     </div>
 
-                    <form className='entry-form' action='submit.php' method='get'>
+                    <form onSubmit={handleSubmit} className='entry-form' action='submit.php' method='get'>
 
                     <div className='custom-selection'>
                             <h4>Cuisine</h4>
@@ -320,7 +331,7 @@ const SubmissionForm = () => {
 
                         <div>
                             <h4>Tags</h4>
-                            <textarea required id="dish-tags" type="text" cols="40" rows="5" placeholder="Ex. pasta, marinara, italian, vegetarian"></textarea>
+                            <textarea required name="dish-tags" id="dish-tags" type="text" cols="40" rows="5" placeholder="Ex. pasta, marinara, italian, vegetarian"></textarea>
                         </div>
 
                         <div>
