@@ -29,10 +29,9 @@ const SubmissionForm = () => {
 function handleSubmit(e) {
     e.preventDefault();
     var formData = new FormData(e.target)
-    var dishTags = formData.get('dish-tags')
-    console.log(dishTags)
+    var dishTags = formData.get('dish-tags').split(', ');
     setTags(dishTags)
-
+    console.log(dishTags)
   }
 
     return (
@@ -69,7 +68,7 @@ function handleSubmit(e) {
 
                         <div>
                             <h4>Dish Name</h4>
-                            <textarea required id="dish-cuisine" type="text" cols="40" rows="1" placeholder="Type the dishes name"></textarea>
+                              <textarea required id="dish-cuisine" type="text" cols="40" rows="1" placeholder="Type the dishes name"></textarea>
                         </div>
 
                         <div>
@@ -336,7 +335,7 @@ function handleSubmit(e) {
 
                         <div>
                             <label className="custom-file-upload">
-                                <input required type="file" />
+                                <input type="file" />
                                 <p>Click to Upload</p>
                                 <img src={uploadIcon} />
                             </label>
