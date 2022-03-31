@@ -1518,6 +1518,18 @@ p.review {
     font-weight: bold;
 }
 
+.submission-form.tablet button {
+    padding: 10px 14px;
+    font-size: 1.2em;
+}
+
+.submission-form.laptop button, .submission-form.desktop button {
+    padding: 12px 16px;
+    font-size: 1.4em;
+    border-radius: 50px;
+
+}
+
 .entry-form div h4 {
     font-size: 15px;
 }
@@ -1620,5 +1632,4 @@ form input::placeholder{
     width: 16px;
     height: 16px;
 }
-
 

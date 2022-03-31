@@ -9,16 +9,16 @@ import '../css/main.css'
 
 
 
-const Features = () =>{
+const Features = () => {
 
-    const isXMobile = useMediaQuery({ 
-        query: '(min-width: 280px) and (max-width: 575px)' 
+    const isXMobile = useMediaQuery({
+        query: '(min-width: 280px) and (max-width: 575px)'
     });
     const isMobile = useMediaQuery({
-        query: '(min-width: 576px) and (max-width: 767px)' 
+        query: '(min-width: 576px) and (max-width: 767px)'
     });
     const isTablet = useMediaQuery({
-        query: '(min-width: 768px) and (max-width: 991px)' 
+        query: '(min-width: 768px) and (max-width: 991px)'
     })
     const isLaptop = useMediaQuery({
         query: '(min-width: 992px) and (max-width: 1199px)'
@@ -27,141 +27,140 @@ const Features = () =>{
         query: '(min-width: 1200px)'
     })
 
-    return(
+    return (
         <div className='banner-wrapper'>
-        {isXMobile &&
-            <section className='features'>
-                <div className='item'>
-                    <h4>Swipe for Food</h4>
-                    <div className="row">
-                        <img className="left-col"src={swipeImage}/>
-                        <p className="right-col">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+            {isXMobile &&
+                <section className='features'>
+                    <div className='item'>
+                        <h4>Swipe for Food</h4>
+                        <div className="row">
+                            <img className="left-col" src={swipeImage} />
+                            <p className="right-col">Discover your current cravings with Fonder. Swipe right to add dishes to your favourite list. Swipe left to move on to the next dish. </p>
+                        </div>
                     </div>
-                </div>
-                <div className='item'>
-                    <h4>Reserve a Table</h4>
-                    <div className="row">
-                        <img className="left-col"src={reserveTableImage}/>
-                        <p className="right-col">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    <div className='item'>
+                        <h4>Reserve a Table</h4>
+                        <div className="row">
+                            <img className="left-col" src={reserveTableImage} />
+                            <p className="right-col">Do you want to visit the restaurant? We are partnered with OpenTable. Make a quick reservation on the same day.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div className='item'>
-                    <h4>Get it Delivered</h4>
-                    <div className="row">
-                        <img className="left-col"src={deliveredImage}/>
-                        <p className="right-col">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    <div className='item'>
+                        <h4>Get it Delivered</h4>
+                        <div className="row">
+                            <img className="left-col" src={deliveredImage} />
+                            <p className="right-col">We are partnered with DoorDash, UberEats, SkipTheDishes, and Fantuan. Get your favourite dishes delivered to your doors with the delivery app of your choice. </p>
+                        </div>
                     </div>
-                </div>
-            </section>
-        }
-        {isMobile &&
-            <section className='features mobile'>
-                <div className='item'>
-                    <h4>Swipe for Food</h4>
-                    <div className="row">
-                        <img className="left-col"src={swipeImage}/>
-                        <p className="right-col">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                </section>
+            }
+            {isMobile &&
+                <section className='features mobile'>
+                    <div className='item'>
+                        <h4>Swipe for Food</h4>
+                        <div className="row">
+                            <img className="left-col" src={swipeImage} />
+                            <p className="right-col">Discover your current cravings with Fonder. Swipe right to add dishes to your favourite list. Swipe left to move on to the next dish. </p>
+                        </div>
                     </div>
-                </div>
-                <div className='item'>
-                    <h4>Reserve a Table</h4>
-                    <div className="row">
-                        <img className="left-col"src={reserveTableImage}/>
-                        <p className="right-col">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    <div className='item'>
+                        <h4>Reserve a Table</h4>
+                        <div className="row">
+                            <img className="left-col" src={reserveTableImage} />
+                            <p className="right-col">Do you want to visit the restaurant? We are partnered with OpenTable. Make a quick reservation on the same day.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div className='item'>
-                    <h4>Get it Delivered</h4>
-                    <div className="row">
-                        <img className="left-col"src={deliveredImage}/>
-                        <p className="right-col">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    <div className='item'>
+                        <h4>Get it Delivered</h4>
+                        <div className="row">
+                            <img className="left-col" src={deliveredImage} />
+                            <p className="right-col">We are partnered with DoorDash, UberEats, SkipTheDishes, and Fantuan. Get your favourite dishes delivered to your doors with the delivery app of your choice. </p>
+                        </div>
                     </div>
-                </div>
-            </section>
-        }
-        {isTablet &&
-            <section className='features tablet'>
-                <div className='item'>
-                    <h4>Swipe for Food</h4>
-                    <div className="row">
-                        <img className="left-col"src={swipeImage}/>
-                        <p className="right-col">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                </section>
+            }
+            {isTablet &&
+                <section className='features tablet'>
+                    <div className='item'>
+                        <h4>Swipe for Food</h4>
+                        <div className="row">
+                            <img className="left-col" src={swipeImage} />
+                            <p className="right-col">Discover your current cravings with Fonder. Swipe right to add dishes to your favourite list. Swipe left to move on to the next dish. </p>
+                        </div>
                     </div>
-                </div>
-                <div className='item'>
-                    <h4>Reserve a Table</h4>
-                    <div className="row">
-                        <img className="left-col"src={reserveTableImage}/>
-                        <p className="right-col">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    <div className='item'>
+                        <h4>Reserve a Table</h4>
+                        <div className="row">
+                            <img className="left-col" src={reserveTableImage} />
+                            <p className="right-col">Do you want to visit the restaurant? We are partnered with OpenTable. Make a quick reservation on the same day.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div className='item'>
-                    <h4>Get it Delivered</h4>
-                    <div className="row">
-                        <img className="left-col"src={deliveredImage}/>
-                        <p className="right-col">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    <div className='item'>
+                        <h4>Get it Delivered</h4>
+                        <div className="row">
+                            <img className="left-col" src={deliveredImage} />
+                            <p className="right-col">We are partnered with DoorDash, UberEats, SkipTheDishes, and Fantuan. Get your favourite dishes delivered to your doors with the delivery app of your choice. </p>
+                        </div>
                     </div>
-                </div>
-            </section>
-        }
-        {isLaptop &&
-            <section className='features laptop'>
-                <div className='item'>
-                    <h4>Swipe for Food</h4>
-                    <div className="row">
-                        <img className="left-col"src={swipeImage}/>
-                        <p className="right-col">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+                </section>
+            }
+            {isLaptop &&
+                <section className='features laptop'>
+                    <div className='item'>
+                        <h4>Swipe for Food</h4>
+                        <div className="row">
+                            <img className="left-col" src={swipeImage} />
+                            <p className="right-col">Discover your current cravings with Fonder. Swipe right to add dishes to your favourite list. Swipe left to move on to the next dish.  </p>
+                        </div>
                     </div>
-                </div>
-                <div className='item'>
-                    <h4>Reserve a Table</h4>
-                    <div className="row">
-                        <img className="left-col"src={reserveTableImage}/>
-                        <p className="right-col">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+                    <div className='item'>
+                        <h4>Reserve a Table</h4>
+                        <div className="row">
+                            <img className="left-col" src={reserveTableImage} />
+                            <p className="right-col">Do you want to visit the restaurant? We are partnered with OpenTable. Make a quick reservation on the same day.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div className='item'>
-                    <h4>Get it Delivered</h4>
-                    <div className="row">
-                        <img className="left-col"src={deliveredImage}/>
-                        <p className="right-col">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+                    <div className='item'>
+                        <h4>Get it Delivered</h4>
+                        <div className="row">
+                            <img className="left-col" src={deliveredImage} />
+                            <p className="right-col">We are partnered with DoorDash, UberEats, SkipTheDishes, and Fantuan. Get your favourite dishes delivered to your doors with the delivery app of your choice.  </p>
+                        </div>
                     </div>
-                </div>
-            </section>
-        }
-        {isDesktop &&
-            <section className='features desktop'>
-                <div className='item'>
-                    <h4>Swipe for Food</h4>
-                    <div className="row">
-                        <img className="left-col"src={swipeImage}/>
-                        <p className="right-col">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+                </section>
+            }
+            {isDesktop &&
+                <section className='features desktop'>
+                    <div className='item'>
+                        <h4>Swipe for Food</h4>
+                        <div className="row">
+                            <img className="left-col" src={swipeImage} />
+                            <p className="right-col">Discover your current cravings with Fonder. Swipe right to add dishes to your favourite list. Swipe left to move on to the next dish.  </p>
+                        </div>
                     </div>
-                </div>
-                <div className='item'>
-                    <h4>Reserve a Table</h4>
-                    <div className="row">
-                        <img className="left-col"src={reserveTableImage}/>
-                        <p className="right-col">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+                    <div className='item'>
+                        <h4>Reserve a Table</h4>
+                        <div className="row">
+                            <img className="left-col" src={reserveTableImage} />
+                            <p className="right-col">Do you want to visit the restaurant? We are partnered with OpenTable. Make a quick reservation on the same day.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div className='item'>
-                    <h4>Get it Delivered</h4>
-                    <div className="row">
-                        <img className="left-col"src={deliveredImage}/>
-                        <p className="right-col">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+                    <div className='item'>
+                        <h4>Get it Delivered</h4>
+                        <div className="row">
+                            <img className="left-col" src={deliveredImage} />
+                            <p className="right-col">We are partnered with DoorDash, UberEats, SkipTheDishes, and Fantuan. Get your favourite dishes delivered to your doors with the delivery app of your choice.  </p>
+                        </div>
                     </div>
-                </div>
-            </section>
-        }
+                </section>
+            }
 
         </div>
     )
 }
-export default Features
-
-
-
-
-
-
+export default Features;
