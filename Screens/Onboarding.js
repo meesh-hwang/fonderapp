@@ -1,42 +1,35 @@
-import React from 'react';
+import React, {useState, useRef} from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import Carousel from 'react-native-anchor-carousel';
+import Swiper from 'react-native-web-swiper';
 
-const cardData = () => [
-    {
-        content: "Swipe right on dishes that you are craving. Find your 'swipe rights' in your favourite list. If the dish you see isn't your style, simply swipe left."
-    },
-    {
 
-    }
-]
 
-const Card = ({item, index}) => {
-    return(
-    <View style={styles.card}>
-        <Text>Random shit goes here</Text>
-    </View>
-    );
-}
-
-const Onboarding = ({navigation}) => {
+const Onboarding = ({navigation, cardData,}) => {
     
-    const carouselRef = React.useRef(null);
+const swiperRef = useRef();
+console.log(swiperRef)
 
     return(
         <View style= {styles.container}>
             <Text>Onboarding Screen</Text>
             <Image style={styles.fries} source={require('../assets/img/fries.png')} />
-            <Carousel
-                ref={carouselRef}
-                data={cardData}
-                renderItem={Card}
-                style={styles.carousel}
-                itemWidth={'100%'}
-                containerWidth={'100%'}
-                separatorWidth={0}
-            />
+            <Swiper ref={swiperRef}
+            swipe controlsProps={{
+                DotComponent:({ index, activeIndex, isActive, onPress }) => <TouchableOpacity onPress={onPress} 
+                style={isActive? styles.activeDot : styles.dot}></TouchableOpacity>,
+                dotsTouchable:true
+                }}>
+                <View style={[styles.slideContainer,styles.slide1]}>
+                    <Text>Slide 1</Text>
+                </View>
+                <View style={[styles.slideContainer,styles.slide2]}>
+                    <Text>Slide 2</Text>
+                </View>
+                <View style={[styles.slideContainer,styles.slide3]}>
+                    <Text>Slide 3</Text>
+                </View>
+            </Swiper>
             <TouchableOpacity onPress={()=>navigation.navigate("Login")}>
                 <Text>Login</Text>
             </TouchableOpacity>
@@ -49,15 +42,28 @@ const Onboarding = ({navigation}) => {
 export default Onboarding
 
 const styles = StyleSheet.create({
-    carousel: {
-    flexGrow: 0,
-    height: 150,
-    },
-    fries:{
-        zIndex:0,
-        width: 200,
-        height:'100%',
-        position:'absolute'
+     container: {
+    flex: 1,
+  },
+  slideContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  slide1: {
+    backgroundColor: 'rgba(20,20,200,0.3)',
+  },
+  slide2: {
+    backgroundColor: 'rgba(20,200,20,0.3)',
+  },
+  slide3: {
+    backgroundColor: 'rgba(200,20,20,0.3)',
+  },
+  activeDot: {
+    backgroundColor:'red',width:40, height:10, marginHorizontal:10
+  },
+  dot: {
+    backgroundColor:'white',width:40, height:10, marginHorizontal:10
 
-    },
+  }
 })
