@@ -14,7 +14,7 @@ const Onboarding = ({navigation}) => {
 
   const NextArrow = () => {
     return (
-      <TouchableOpacity style={styles.skipArrow} onPress={()=>swiperRef.current.goToNext()}>
+      <TouchableOpacity style={styles.skipArrow} onPress={()=>swiperRef.current.goTo(2)}>
         <AppText>
           <Text style={{fontWeight:"800", color:"#EC8980"}} >SKIP</Text>
         </AppText>
