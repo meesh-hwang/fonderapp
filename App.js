@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
@@ -43,12 +44,13 @@ function LogoTitleSm() {
 
 export default function App() {
   return (
+    <SafeAreaProvider>
     <NavigationContainer ref={navigationRef}>    
       <Stack.Navigator initialRouteName={Onboarding}>
         
         <Stack.Group> 
           <Stack.Screen name="Onboarding" component={Onboarding} 
-          options={{ headerTitle: (props) => <LogoTitle {...props} />, headerTitleAlign: 'center', headerStyle: {backgroundColor:'#E66255'}}} />
+          options={{ headerTitle: (props) => <LogoTitle {...props} />, headerTitleAlign: 'center', headerStyle: {backgroundColor:'#E66255'}, headerShadowVisible: false}} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Signup" component={Signup} />
         </Stack.Group>
@@ -62,7 +64,7 @@ export default function App() {
         </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>
-
+</SafeAreaProvider>
   );
 }
 
