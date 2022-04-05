@@ -4,6 +4,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import * as RootNavigation from './RootNavigation.js';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import Onboarding from './Screens/Onboarding';
 
 import Login from './Screens/Login';
@@ -16,6 +17,7 @@ import UserFavourites from './Screens/UserFavourites';
 import MealInfo from './Screens/MealInfo';
 
 import { navigationRef } from './RootNavigation';
+
 const Stack = createStackNavigator();
 
 function LogoTitle() {
@@ -42,6 +44,27 @@ function LogoTitleSm() {
   );
 }
 
+function LogoTitleUser() {
+  return (
+    <TouchableOpacity onPress={() => RootNavigation.navigate("UserProfile")}>
+      <Ionicons name='person-circle-outline'
+        size={36}
+        color='white' />
+    </TouchableOpacity>
+  );
+}
+
+function LogoTitleFavs() {
+  return (
+    <TouchableOpacity onPress={() => RootNavigation.navigate("UserFavourites")}>
+      <Ionicons name='heart-outline'
+        size={21}
+        color='white' />
+    </TouchableOpacity>
+  );
+}
+
+
 export default function App() {
   return (
     <SafeAreaProvider>
@@ -57,7 +80,16 @@ export default function App() {
 
         <Stack.Group>
           <Stack.Screen name="Home" component={Home} options={{ headerTitle: (props) => <LogoTitleSm {...props} />, headerTitleAlign: 'center', headerStyle: {backgroundColor:'#E66255'}}}/>
-          <Stack.Screen name="UserProfile" component={UserProfile} />
+          <Stack.Screen name="UserProfile" component={UserProfile}
+            options={{
+              headerTitle: (props) => <LogoTitleSm {...props} />,
+              headerTitleAlign: 'center',
+              headerStyle: { backgroundColor: '#E66255' },
+              headerRight: (props) => <LogoTitleFavs {...props} />,
+              headerLeft: (props) => <LogoTitleUser {...props} />,
+              headerRightContainerStyle: { paddingRight: 20, },
+              headerLeftContainerStyle: { paddingLeft: 20, },
+            }} />
           <Stack.Screen name="CuisinesSelection" component={CuisinesSelection} />
           <Stack.Screen name="UserFavourites" component={UserFavourites} />
           <Stack.Screen name="MealInfo" component={MealInfo} />

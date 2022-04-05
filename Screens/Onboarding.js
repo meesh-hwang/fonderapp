@@ -3,7 +3,8 @@ import {View, Text, StyleSheet, Image, useWindowDimensions} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Swiper from 'react-native-web-swiper';
 import Icon from 'react-native-vector-icons/Ionicons';
-import AppText from '../Components/AppText'
+import { useFonts } from 'expo-font';
+import { Assistant_400Regular, Assistant_700Bold, Assistant_800ExtraBold, Assistant_600SemiBold, Assistant_500Medium } from '@expo-google-fonts/assistant';
 
 
 const Onboarding = ({navigation}) => {
@@ -12,12 +13,18 @@ const Onboarding = ({navigation}) => {
   const vh = useWindowDimensions().height;
   const swiperRef = useRef();
 
+  const [fontsLoaded]= useFonts({
+    Assistant_400Regular,
+    Assistant_800ExtraBold,
+    Assistant_500Medium,
+    Assistant_600SemiBold,
+    Assistant_700Bold
+    });
+
   const NextArrow = () => {
     return (
       <TouchableOpacity style={styles.skipArrow} onPress={()=>swiperRef.current.goTo(2)}>
-        <AppText>
-          <Text style={{fontWeight:"800", color:"#EC8980"}} >SKIP</Text>
-        </AppText>
+          <Text style={styles.skipTxt} >SKIP</Text>
         <Icon name="arrow-forward-circle-sharp" size={30} color="#EC8980" />
       </TouchableOpacity>
     );
@@ -41,19 +48,19 @@ const Onboarding = ({navigation}) => {
                 dotsTouchable:true
                 }}>
                 <View style={styles.slideContainer}>
-                    <AppText><Text style={styles.sliderTxt}>Swipe right on dishes that you are craving. Find your 'swipe rights' in your favourite list. If the dish you see isn't your style, simply swipe left. </Text></AppText>
+                    <Text style={styles.sliderTxt}>Swipe right on dishes that you are craving. Find your 'swipe rights' in your favourite list. If the dish you see isn't your style, simply swipe left. </Text>
                 </View>
                 <View style={styles.slideContainer}>
-                    <AppText><Text style={styles.sliderTxt}>Satisfy your craving quickly by ordering through your preferred delivery app. Want an in person experience? Make a reservation through OpenTable.</Text></AppText>
+                    <Text style={styles.sliderTxt}>Satisfy your craving quickly by ordering through your preferred delivery app. Want an in person experience? Make a reservation through OpenTable.</Text>
                 </View>
                 <View style={styles.slideContainer}>
-                    <AppText><Text style={styles.loginHeader}>Let's Get Started</Text></AppText>
+                  <Text style={styles.loginHeader}>Let's Get Started</Text>
                     
                     <TouchableOpacity style={styles.btn} onPress={()=>navigation.navigate("Login")}>
-                        <AppText><Text style={styles.btnTxt}>LOGIN</Text></AppText>
+                      <Text style={styles.btnTxt}>LOGIN</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.btn} onPress={()=>navigation.navigate("Signup")}>
-                        <AppText><Text style={styles.btnTxt}>SIGNUP</Text></AppText>
+                      <Text style={styles.btnTxt}>SIGNUP</Text>
                     </TouchableOpacity>
                 </View>
             </Swiper>
@@ -74,6 +81,16 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'flex-end',
     backgroundColor:'#E66255'
+  },
+  skipTxt:{
+    fontWeight:"800", 
+    color:"#EC8980"
+  },
+  txt: {
+    fontFamily:'Assistant_700Bold',
+    fontSize:18,
+    color:"#EC8980"
+
   },
   slideContainer: {
     flex: 1,
@@ -141,7 +158,10 @@ const styles = StyleSheet.create({
     display:'flex',
     flexDirection:'column',
     textAlign:'center',
-    alignItems:'center'
+    alignItems:'center',
+    fontFamily: 'Assistant_800ExtraBold',
+    color:"#EC8980"
+
   },
   loginHeader: {
     fontWeight:"800",

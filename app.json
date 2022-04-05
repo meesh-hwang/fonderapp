@@ -4,7 +4,7 @@
     "slug": "app-fonder",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/img/logo.png",
+    "icon": "./assets/img/favicon.png",
     "splash": {
       "image": "./assets/img/logo.png",
       "resizeMode": "contain",
