@@ -1,3 +1,5 @@
+import React, {useState} from 'react';
+
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -6,6 +8,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import * as RootNavigation from './RootNavigation.js';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Onboarding from './Screens/Onboarding';
+
+import AppLoading from 'expo-app-loading';
+
 
 import Login from './Screens/Login';
 import Signup from './Screens/Signup';
@@ -66,22 +71,20 @@ function LogoTitleFavs() {
 
 
 export default function App() {
+
   return (
     <SafeAreaProvider>
     <NavigationContainer ref={navigationRef}>    
       <Stack.Navigator initialRouteName={Onboarding}>
         
-        <Stack.Group> 
+        <Stack.Group screenOptions={{ headerTitle: (props) => <LogoTitle {...props} />, headerTitleAlign: 'center', headerStyle: {backgroundColor:'#E66255'}, headerShadowVisible: false, headerTintColor:'white'}}> 
           <Stack.Screen name="Onboarding" component={Onboarding} 
-          options={{ headerTitle: (props) => <LogoTitle {...props} />, headerTitleAlign: 'center', headerStyle: {backgroundColor:'#E66255'}, headerShadowVisible: false}} />
+           />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Signup" component={Signup} />
         </Stack.Group>
 
-        <Stack.Group>
-          <Stack.Screen name="Home" component={Home} options={{ headerTitle: (props) => <LogoTitleSm {...props} />, headerTitleAlign: 'center', headerStyle: {backgroundColor:'#E66255'}}}/>
-          <Stack.Screen name="UserProfile" component={UserProfile}
-            options={{
+        <Stack.Group screenOptions={{
               headerTitle: (props) => <LogoTitleSm {...props} />,
               headerTitleAlign: 'center',
               headerStyle: { backgroundColor: '#E66255' },
@@ -89,7 +92,10 @@ export default function App() {
               headerLeft: (props) => <LogoTitleUser {...props} />,
               headerRightContainerStyle: { paddingRight: 20, },
               headerLeftContainerStyle: { paddingLeft: 20, },
-            }} />
+            }}>
+          <Stack.Screen name="Home" component={Home} 
+           />
+          <Stack.Screen name="UserProfile" component={UserProfile} />
           <Stack.Screen name="CuisinesSelection" component={CuisinesSelection} />
           <Stack.Screen name="UserFavourites" component={UserFavourites} />
           <Stack.Screen name="MealInfo" component={MealInfo} />

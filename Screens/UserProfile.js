@@ -1,13 +1,17 @@
+import React, {useState} from 'react';
 import { View, Text, StyleSheet, Image, } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 // Import Google Fonts
+import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
 import { Assistant_400Regular, Assistant_700Bold, Assistant_800ExtraBold, Assistant_600SemiBold } from '@expo-google-fonts/assistant';
 
 
 const UserProfile = ({ navigation }) => {
+
+    const [IsReady, SetIsReady] = useState(false);
 
     // Custom Google Fonts
     let [fontsLoaded] = useFonts({
@@ -17,6 +21,15 @@ const UserProfile = ({ navigation }) => {
         Assistant_800ExtraBold,
     });
 
+    if(!fontsLoaded) {
+        return(
+        <AppLoading
+            startAsync={fontsLoaded}
+            onFinish={() => SetIsReady(true)}
+            onError={() => {}}
+        />
+        );
+    }
     return (
         <View style={styles.container}>
             {/* Profile Photo and Name */}

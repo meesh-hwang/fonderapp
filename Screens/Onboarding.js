@@ -4,29 +4,43 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import Swiper from 'react-native-web-swiper';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useFonts } from 'expo-font';
-import { Assistant_400Regular, Assistant_700Bold, Assistant_800ExtraBold, Assistant_600SemiBold, Assistant_500Medium } from '@expo-google-fonts/assistant';
+
+import AppLoading from 'expo-app-loading';
+
+import { Assistant_400Regular  , Assistant_700Bold , Assistant_800ExtraBold , Assistant_600SemiBold , Assistant_500Medium } from '@expo-google-fonts/assistant';
 
 
 const Onboarding = ({navigation}) => {
     
   const vw = useWindowDimensions().width;
   const vh = useWindowDimensions().height;
-  const swiperRef = useRef();
 
-  const [fontsLoaded]= useFonts({
+  const [IsReady, SetIsReady] = useState(false);
+  let [fontsLoaded]= useFonts({
     Assistant_400Regular,
     Assistant_800ExtraBold,
     Assistant_500Medium,
     Assistant_600SemiBold,
     Assistant_700Bold
     });
+  let swiperRef = useRef();
 
   const NextArrow = () => {
     return (
-      <TouchableOpacity style={styles.skipArrow} onPress={()=>swiperRef.current.goTo(2)}>
+      <TouchableOpacity style={[styles.skipArrow, {fontFamily:'Assistant_800ExtraBold'}]} onPress={()=>swiperRef.current.goTo(2)}>
           <Text style={styles.skipTxt} >SKIP</Text>
         <Icon name="arrow-forward-circle-sharp" size={30} color="#EC8980" />
       </TouchableOpacity>
+    );
+  }
+
+  if(!fontsLoaded) {
+    return(
+      <AppLoading
+        startAsync={fontsLoaded}
+        onFinish={() => SetIsReady(true)}
+        onError={() => {}}
+      />
     );
   }
   return(
@@ -84,13 +98,9 @@ const styles = StyleSheet.create({
   },
   skipTxt:{
     fontWeight:"800", 
-    color:"#EC8980"
-  },
-  txt: {
-    fontFamily:'Assistant_700Bold',
-    fontSize:18,
-    color:"#EC8980"
-
+    fontSize:20,
+    color:"#EC8980",
+    fontFamily:'Assistant_800ExtraBold',
   },
   slideContainer: {
     flex: 1,
@@ -158,24 +168,32 @@ const styles = StyleSheet.create({
     display:'flex',
     flexDirection:'column',
     textAlign:'center',
+    fontFamily:'Assistant_700Bold',
     alignItems:'center',
-    fontFamily: 'Assistant_800ExtraBold',
-    color:"#EC8980"
+    color:"#EC8980",
+    fontSize:18
 
   },
   loginHeader: {
+    fontFamily:'Assistant_800ExtraBold',
     fontWeight:"800",
-    fontSize:25
+    fontSize:25,
+    color:"#EC8980",
   },
   btn: {
     backgroundColor: '#FFCB69',
     width:200,
+    display:'flex',
+    justifyContent:'center',
     textAlign:'center',
     paddingVertical:5,
     marginVertical:5,
     borderRadius:40
   },
   btnTxt: {
+    fontFamily:'Assistant_700Bold',
+    fontSize:18,
+    alignSelf:'center',
     color:'white'
   }
 })
