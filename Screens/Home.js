@@ -1,9 +1,12 @@
-const userId = 1;
 import React, { useState, useEffect, useRef } from 'react';
 import {View, StyleSheet} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Swipes from '../Components/Swipes'
+import { useSelector } from "react-redux";
+
 const Home = ({navigation}) => {
+
+    const userId = useSelector((state) => state.token.token);
     const [meals, setMeals] = useState([])
     const [currentIndex, setCurrentIndex] = useState(0);
     const swipesRef = useRef(null)
@@ -24,7 +27,7 @@ const Home = ({navigation}) => {
 
 
     function handleLike(mealId) {
-        addUserMeals(mealId);
+        addUserMeals(userId, mealId);
         nextUser()
     }
     
@@ -32,7 +35,6 @@ const Home = ({navigation}) => {
        nextUser()
     }
     function nextUser() {
-        // console.log(meals.length);
         const nextIndex = meals.length - 1 === currentIndex ? 0 : currentIndex + 1
         setCurrentIndex(nextIndex)
       }
@@ -74,7 +76,7 @@ const styles = StyleSheet.create({
     }
 })
 
-function addUserMeals(mealId){
+function addUserMeals(userId, mealId){
     console.log(userId + " likes " + mealId);
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
