@@ -6,11 +6,12 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case ADD_user:
+    case ADD_USER:
       const user = action.user;
 
       return {
         user: user
+        
       };
   }
   return state;

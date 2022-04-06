@@ -17,7 +17,7 @@ const Item = ({ name, image_url, short_desc }) => {return(
 );}
 
 
-const UserFavourites = ({navigation}) => {
+const UserFavourites = ({navigation, user_id, item_id}) => {
     const [IsReady, SetIsReady] = useState(false);
     let [fontsLoaded]= useFonts({
         Assistant_400Regular,
@@ -35,10 +35,17 @@ const UserFavourites = ({navigation}) => {
 
     useEffect(()=> {
 
+        var raw = JSON.stringify({
+        "user_id": user_id,
+        "cuisine_id": item_id
+        });
+
         var requestOptions = {
-            method: 'GET',
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
             redirect: 'follow'
-        }
+        };
 
         fetch("https://fonder.edwardlin.ca/api/v1/users/read.php?id=1", requestOptions)
         .then(response => response.json())
