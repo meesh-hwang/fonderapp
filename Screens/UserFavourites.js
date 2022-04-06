@@ -6,7 +6,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useFonts } from 'expo-font';
 
 import AppLoading from 'expo-app-loading';
-
+import { useSelector } from "react-redux";
 import { Assistant_400Regular  , Assistant_700Bold , Assistant_800ExtraBold , Assistant_600SemiBold , Assistant_500Medium } from '@expo-google-fonts/assistant';
 
 const Item = ({ name, image_url, short_desc }) => {return(
@@ -18,6 +18,7 @@ const Item = ({ name, image_url, short_desc }) => {return(
 
 
 const UserFavourites = ({navigation}) => {
+    const userId = useSelector((state) => state.user.user);
     const [IsReady, SetIsReady] = useState(false);
     let [fontsLoaded]= useFonts({
         Assistant_400Regular,
@@ -40,7 +41,7 @@ const UserFavourites = ({navigation}) => {
             redirect: 'follow'
         }
 
-        fetch("https://fonder.edwardlin.ca/api/v1/users/read.php?id=1", requestOptions)
+        fetch("https://fonder.edwardlin.ca/api/v1/users/read.php?id="+userId, requestOptions)
         .then(response => response.json())
         .then(result => {
                             const favMeals = result.users[0].fav_meal.meals;
@@ -85,8 +86,6 @@ if(!fontsLoaded) {
     
     
 };
-
-
 const styles = StyleSheet.create({
     container:{
         alignItems:'center',
