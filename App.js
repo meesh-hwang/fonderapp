@@ -11,6 +11,18 @@ import Onboarding from './Screens/Onboarding';
 
 import AppLoading from 'expo-app-loading';
 
+//LOCAL STORAGE SHIT
+import { createStore, combineReducers } from "redux";
+import { Provider } from "react-redux";
+import tokenReducer from './store/reducer/user'
+const rootReducer = combineReducers({
+  user: tokenReducer,
+});
+const store = createStore(rootReducer);
+
+
+
+
 
 import Login from './Screens/Login';
 import Signup from './Screens/Signup';
@@ -73,6 +85,7 @@ function LogoTitleFavs() {
 export default function App() {
 
   return (
+    <Provider store={store}>
     <SafeAreaProvider>
     <NavigationContainer ref={navigationRef}>    
       <Stack.Navigator initialRouteName={Onboarding}>
@@ -108,6 +121,7 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>
 </SafeAreaProvider>
+</Provider>
   );
 }
 
