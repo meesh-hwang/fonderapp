@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 import {View, Text,StyleSheet, Image, TextInput} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-
-
-
+import * as TokenAction from '../store/actions/user';
+import { useDispatch } from 'react-redux';
 import { useFonts } from 'expo-font';
 
 
 import { Assistant_400Regular  , Assistant_700Bold , Assistant_800ExtraBold , Assistant_600SemiBold , Assistant_500Medium } from '@expo-google-fonts/assistant';
 
-
 const Login = ({navigation}) => {
 
-
+    const dispatch = useDispatch();
     const [username, enterUser] = useState("");
     const [password, enterPass] = useState("");
     const [errorMsg, getErrorMsg] = useState("");
@@ -41,7 +39,7 @@ const Login = ({navigation}) => {
         .then(result => {
             console.log(result)
             if(result.status){
-                    dispatch(setUserId(result.userId))
+                    dispatch(TokenAction.addUser(result.userId));
                     navigation.navigate("Home");
                     console.log("logging user in");
 
@@ -84,7 +82,7 @@ const Login = ({navigation}) => {
 
         <Text style={{alignSelf: 'center', fontSize:15, marginBottom: 5, color: '#7b0001', fontWeight: 'bold'}}>{errorMsg}</Text>
         
-        <TouchableOpacity style={styles.btn} onPress={()=> /*loginUser()*/ navigation.navigate('Home')}>
+        <TouchableOpacity style={styles.btn} onPress={()=>loginUser()}>
             <Text style={styles.btnTxt}>LOGIN</Text>
         </TouchableOpacity>
 
