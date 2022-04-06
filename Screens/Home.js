@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 const Home = ({navigation}) => {
 
-    const userId = useSelector((state) => state.token.token);
+    const userId = useSelector((state) => state.user.user);
     const [meals, setMeals] = useState([])
     const [currentIndex, setCurrentIndex] = useState(0);
     const swipesRef = useRef(null)
