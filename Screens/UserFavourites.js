@@ -19,6 +19,8 @@ const Item = ({ name, image_url, short_desc }) => {return(
 
 const UserFavourites = ({navigation}) => {
     const userId = useSelector((state) => state.user.user);
+
+    
     const [IsReady, SetIsReady] = useState(false);
     let [fontsLoaded]= useFonts({
         Assistant_400Regular,
@@ -36,15 +38,9 @@ const UserFavourites = ({navigation}) => {
 
     useEffect(()=> {
 
-        var raw = JSON.stringify({
-        "user_id": user_id,
-        "cuisine_id": item_id
-        });
 
         var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: raw,
+            method: 'GET',
             redirect: 'follow'
         };
 
