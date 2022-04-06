@@ -51,7 +51,7 @@ const UserProfile = ({ navigation }) => {
                             style={styles.icon} />
                 </TouchableOpacity>
                 {/* CUISINE SELECTION */}
-                <TouchableOpacity style={styles.personalInfo}>
+                <TouchableOpacity style={styles.personalInfo} onPress={()=>navigation.navigate('CuisinesSelection')}>
                     <Text style={styles.subheadingText}>Cuisine Selection{"\n"}
                         <Text style={styles.description}>Choose your favourite cuisine types</Text>
                     </Text>

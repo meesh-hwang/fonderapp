@@ -77,11 +77,16 @@ export default function App() {
     <NavigationContainer ref={navigationRef}>    
       <Stack.Navigator initialRouteName={Onboarding}>
         
-        <Stack.Group screenOptions={{ headerShown:false}}> 
-          <Stack.Screen name="Onboarding" component={Onboarding} 
+        <Stack.Group> 
+          <Stack.Screen name="Onboarding" component={Onboarding} options={{
+            headerTitle: (props) => <LogoTitle {...props} />,
+            headerTitleAlign: 'center',
+            headerStyle: { backgroundColor: '#E66255' },
+            headerShadowVisible:false
+          }}
            />
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Signup" component={Signup} />
+          <Stack.Screen name="Login" component={Login}  options={{ headerShown:false}}/>
+          <Stack.Screen name="Signup" component={Signup}  options={{ headerShown:false}}/>
         </Stack.Group>
 
         <Stack.Group screenOptions={{

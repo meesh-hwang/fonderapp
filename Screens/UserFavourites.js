@@ -9,66 +9,15 @@ import AppLoading from 'expo-app-loading';
 
 import { Assistant_400Regular  , Assistant_700Bold , Assistant_800ExtraBold , Assistant_600SemiBold , Assistant_500Medium } from '@expo-google-fonts/assistant';
 
-const DATA = [
-    {
-        id: 'ah',
-        title: 'Piss Pills',
-        keyImage: 'https://fonder.edwardlin.ca/api/img/meals/Chili-Cheese-Dog-f.jpg',
-        short_desc:'ilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfs ilovemilfsilovemilfs'
-    },
-    {
-        id: 'bah',
-        title: 'Gay Sex',
-        keyImage: 'https://fonder.edwardlin.ca/api/img/meals/Chili-Cheese-Dog-f.jpg',
-        short_desc:'ilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfs ilovemilfsilovemilfs'
-    },
-    {
-        id: 'cah',
-        title: 'Bitch Patties',
-        keyImage: 'https://fonder.edwardlin.ca/api/img/meals/Chili-Cheese-Dog-f.jpg',
-        short_desc:'ilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfs ilovemilfsilovemilfs'
-    },
-    {
-        id: 'dah',
-        title: 'Milf Hunter',
-        keyImage: 'https://fonder.edwardlin.ca/api/img/meals/Chili-Cheese-Dog-f.jpg',
-        short_desc:'ilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfs ilovemilfsilovemilfs'
-    },
-    {
-        id: 'eah',
-        title: 'Baby Puncher',
-        keyImage: 'https://fonder.edwardlin.ca/api/img/meals/Chili-Cheese-Dog-f.jpg',
-        short_desc:'ilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfs ilovemilfsilovemilfs'
-    },
-    {
-        id: 'fah',
-        title: 'Slutty Dog',
-        keyImage: 'https://fonder.edwardlin.ca/api/img/meals/Chili-Cheese-Dog-f.jpg',
-        short_desc:'ilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfs ilovemilfsilovemilfs'
-    },
-    {
-        id: 'gah',
-        title: 'Horse Shit',
-        keyImage: 'https://fonder.edwardlin.ca/api/img/meals/Chili-Cheese-Dog-f.jpg',
-        short_desc:'ilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfs ilovemilfsilovemilfs'
-    },
-    {
-        id: 'hah',
-        title: 'Bitch Nugget',
-        keyImage: 'https://fonder.edwardlin.ca/api/img/meals/Chili-Cheese-Dog-f.jpg',
-        short_desc:'ilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfsilovemilfs ilovemilfsilovemilfs'
-    }
-];
-
-const Item = ({ title, keyImage, short_desc }) => {return(
-  <TouchableOpacity style={styles.item} onPress={()=>{RootNavigation.navigate('MealInfo', {meal: title, img: keyImage, desc: short_desc })}}>
-        <Image source={{uri: keyImage}} style={{height:200, width:170, resizeMode:'cover'}} />
-        <Text style={styles.title}>{title}</Text>
+const Item = ({ name, image_url, short_desc }) => {return(
+  <TouchableOpacity style={styles.item} onPress={()=>{RootNavigation.navigate('MealInfo', {meal: name, img: image_url, desc: short_desc })}}>
+        <Image source={{uri: image_url}} style={{height:200, width:170, resizeMode:'cover'}} />
+        <Text style={styles.name}>{name}</Text>
   </TouchableOpacity>
 );}
 
 
-const UserFavourites = () => {
+const UserFavourites = ({navigation}) => {
     const [IsReady, SetIsReady] = useState(false);
     let [fontsLoaded]= useFonts({
         Assistant_400Regular,
@@ -79,7 +28,7 @@ const UserFavourites = () => {
         });
 
     const renderItem = ({ item }) => {return(
-        <Item title={item.title} keyImage={item.keyImage} />
+        <Item name={item.name} image_url={item.image_url} short_desc={item.short_desc} />
     );}
 
     const [mealData, setMealData] = useState();
@@ -92,8 +41,23 @@ const UserFavourites = () => {
         }
 
         fetch("https://fonder.edwardlin.ca/api/v1/users/read.php?id=1", requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result.user[0].fav_meals.meals[0]) )
+        .then(response => response.json())
+        .then(result => {
+                            const favMeals = result.users[0].fav_meal.meals;
+
+                            // REMOVE DUPLICATE MEALS
+                            const uniqueIds = [];
+                            const unique = favMeals.filter(favMeals => {
+                            const isDuplicate = uniqueIds.includes(favMeals.id);
+                            if (!isDuplicate) {
+                                uniqueIds.push(favMeals.id);
+                                return true;
+                            }
+                            });
+
+                            // console.log(unique)
+                            setMealData(unique);
+                        })
         .catch(error => console.log('error', error));
     }, []);
     
@@ -111,7 +75,7 @@ if(!fontsLoaded) {
             <View style={styles.container}>
                 <FlatList
                     numColumns={2}
-                    data={DATA}
+                    data={mealData}
                     renderItem={renderItem}
                     keyExtractor={item => item.id}
                 />
@@ -128,9 +92,9 @@ const styles = StyleSheet.create({
         alignItems:'center',
         display:'flex',
         flexDirection:'column',
-        flex:1
+        flex:1,
     },
-    title: {
+    name: {
         fontFamily: 'Assistant_600SemiBold',
         color:'#fff',
         fontSize:16,

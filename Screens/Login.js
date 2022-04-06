@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import * as RootNavigation from '../RootNavigation.js';
 import {View, Text,StyleSheet, Image, TextInput} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 
 import { useFonts } from 'expo-font';
@@ -12,20 +11,22 @@ import { Assistant_400Regular  , Assistant_700Bold , Assistant_800ExtraBold , As
 
 
 const Login = ({navigation}) => {
-    
-    const [username, enterUser] = useState("test@gmail.com");
-    const [password, enterPass] = useState("test");
+
+
+    const [username, enterUser] = useState("");
+    const [password, enterPass] = useState("");
     const [errorMsg, getErrorMsg] = useState("");
 
 
 
     function loginUser(){
+
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
         var raw = JSON.stringify({
         "email": username,
-        "password": password
+        "password": password.password
         });
 
         var requestOptions = {
@@ -38,27 +39,23 @@ const Login = ({navigation}) => {
         fetch("https://fonder.edwardlin.ca/api/v1/users/login.php", requestOptions)
         .then(response => response.json())
         .then(result => {
-            console.log(result);
+            console.log(result)
             if(result.status){
-                    AsyncStorage.setItem('@storage_Key', result.userId)
+                    dispatch(setUserId(result.userId))
                     navigation.navigate("Home");
                     console.log("logging user in");
+
+
             }
             else{
                 console.log(result);
-                getErrorMsg(result.message)
+                getErrorMsg(result.message);
             }
-            
-            
+        
+        
         })
         .catch(error => console.log('error', error));
-        
-
-
-        
-        
     }
-
     return(
     <View style={styles.container}>
         <Image
@@ -69,7 +66,6 @@ const Login = ({navigation}) => {
           <View style={styles.formItem}>
         <Text style={styles.label}>Email</Text>
         <TextInput
-            value={'test@gmail.com'}
             onChangeText={(username) => enterUser(username)}
             placeholder={'Email'}
             style={styles.input}
@@ -78,7 +74,6 @@ const Login = ({navigation}) => {
         <View style={styles.formItem}>
             <Text style={styles.label}>Password</Text>
             <TextInput
-                value={"test"}
                 onChangeText={(password) => enterPass({ password })}
                 placeholder={'Password'}
                 secureTextEntry={true}
@@ -89,7 +84,7 @@ const Login = ({navigation}) => {
 
         <Text style={{alignSelf: 'center', fontSize:15, marginBottom: 5, color: '#7b0001', fontWeight: 'bold'}}>{errorMsg}</Text>
         
-        <TouchableOpacity style={styles.btn} onPress={()=>loginUser()}>
+        <TouchableOpacity style={styles.btn} onPress={()=> /*loginUser()*/ navigation.navigate('Home')}>
             <Text style={styles.btnTxt}>LOGIN</Text>
         </TouchableOpacity>
 
@@ -160,7 +155,7 @@ const styles = StyleSheet.create({
         marginVertical:5,
         borderRadius:40,
         alignSelf: 'center',
-        width:'100%',
+        width:'80%',
         justifyContent: 'center'
       },
       btnTxt: {
