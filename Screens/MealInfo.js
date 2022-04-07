@@ -3,6 +3,7 @@ import * as RootNavigation from '../RootNavigation.js';
 import {View, Text, Image, StyleSheet, useWindowDimensions} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useFonts } from 'expo-font';
+import MapView from 'react-native-maps';
 
 import AppLoading from 'expo-app-loading';
 
@@ -12,7 +13,6 @@ import { Assistant_400Regular  , Assistant_700Bold , Assistant_800ExtraBold , As
 
   const MealInfo = ({navigation, route}) => {
     const vw = useWindowDimensions().width;
-    const fs = vw/30;
     const [IsReady, SetIsReady] = useState(false);
     let [fontsLoaded]= useFonts({
       Assistant_400Regular,
@@ -25,8 +25,9 @@ import { Assistant_400Regular  , Assistant_700Bold , Assistant_800ExtraBold , As
     const Partners = () => {
       return(
         <View style={styles.partners}>
-
-          <Text style={styles.partnersTxt}>
+           <MapView
+           mapType={Platform.OS == "android" ? "standard" : "none"} />
+          {/* <Text style={styles.partnersTxt}>
             Get it delivered with our partners
           </Text>
 
@@ -41,7 +42,8 @@ import { Assistant_400Regular  , Assistant_700Bold , Assistant_800ExtraBold , As
             OR
           </Text>
           <Text style={styles.partnersTxt}>Book a table at a restaurant near you</Text>
-          <Image source={require('../assets/img/partners/opentable_icon.png')} style={[styles.partnerImg, {alignSelf:'center'}]} />
+          <Image source={require('../assets/img/partners/opentable_icon.png')} style={[styles.partnerImg, {alignSelf:'center'}]} /> */}
+          
 
         </View>
       );
@@ -53,7 +55,7 @@ import { Assistant_400Regular  , Assistant_700Bold , Assistant_800ExtraBold , As
           <Image source={{uri: img}} style={{width:vw,height:'60%'}}/>
           <View style={styles.mealResult}>
             <Text style={styles.mealName}>{meal}</Text>
-            <Text style={[styles.mealDesc, {fontSize:fs}]}>{desc}</Text>
+            <Text style={styles.mealDesc}>{desc}</Text>
           </View>
         </View>
       );
@@ -106,6 +108,7 @@ const styles=StyleSheet.create({
         fontFamily:'Assistant_600SemiBold',
         color:'#000',
         lineHeight:20,
+        fontSize:12
     },
     partners: {
       width:'100%',
