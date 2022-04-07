@@ -90,7 +90,7 @@ export default function App() {
     <NavigationContainer ref={navigationRef}>    
       <Stack.Navigator initialRouteName={Onboarding}>
         
-        <Stack.Group> 
+        <Stack.Group screenOptions={{cardStyle: {backgroundColor:'#FFFBF3'}}}> 
           <Stack.Screen name="Onboarding" component={Onboarding} options={{
             headerTitle: (props) => <LogoTitle {...props} />,
             headerTitleAlign: 'center',
@@ -110,6 +110,7 @@ export default function App() {
               headerLeft: (props) => <LogoTitleUser {...props} />,
               headerRightContainerStyle: { paddingRight: 20, },
               headerLeftContainerStyle: { paddingLeft: 20, },
+              cardStyle: {backgroundColor:'#FFFBF3'}
             }}>
           <Stack.Screen name="Home" component={Home} 
            />

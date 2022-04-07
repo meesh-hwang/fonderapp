@@ -11,8 +11,8 @@ import { Assistant_400Regular  , Assistant_700Bold , Assistant_800ExtraBold , As
 
 const Item = ({ name, image_url, short_desc }) => {return(
   <TouchableOpacity style={styles.item} onPress={()=>{RootNavigation.navigate('MealInfo', {meal: name, img: image_url, desc: short_desc })}}>
-        <Image source={{uri: image_url}} style={{height:200, width:170, resizeMode:'cover'}} />
-        <Text style={styles.name}>{name}</Text>
+        <Image source={{uri: image_url}} style={{height:200, minWidth:170, maxWidth:170, resizeMode:'cover', flex:0.5}} />
+        <Text style={[styles.name, {flex:0.5, maxWidth:170, minWidth:170}]}>{name}</Text>
   </TouchableOpacity>
 );}
 
@@ -59,7 +59,6 @@ const UserFavourites = ({navigation}) => {
                             }
                             });
 
-                            // console.log(unique)
                             setMealData(unique);
                         })
         .catch(error => console.log('error', error));
@@ -95,15 +94,18 @@ const styles = StyleSheet.create({
         display:'flex',
         flexDirection:'column',
         flex:1,
+
     },
     name: {
-        fontFamily: 'Assistant_600SemiBold',
+        fontFamily: 'Assistant_700Bold',
         color:'#fff',
         fontSize:16,
         backgroundColor:'#FFCB69',
-        textAlign:'center',
-        paddingVertical:10,
-        lineHeight:30
+        paddingVertical:20,
+        lineHeight:20,
+        flexWrap:'wrap',
+        paddingHorizontal:15,
+        textAlign:'left'
     },
     item:{
         padding:10,

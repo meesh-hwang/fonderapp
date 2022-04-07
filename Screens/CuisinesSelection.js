@@ -82,7 +82,6 @@ export default CuisinesSelection;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fffbf3",
         paddingHorizontal:30,
         paddingVertical:20
     },

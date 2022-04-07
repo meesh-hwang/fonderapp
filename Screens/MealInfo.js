@@ -12,6 +12,7 @@ import { Assistant_400Regular  , Assistant_700Bold , Assistant_800ExtraBold , As
 
   const MealInfo = ({navigation, route}) => {
     const vw = useWindowDimensions().width;
+    const fs = vw/30;
     const [IsReady, SetIsReady] = useState(false);
     let [fontsLoaded]= useFonts({
       Assistant_400Regular,
@@ -39,7 +40,7 @@ import { Assistant_400Regular  , Assistant_700Bold , Assistant_800ExtraBold , As
           <Text style={styles.partnersTxt}>
             OR
           </Text>
-
+          <Text style={styles.partnersTxt}>Book a table at a restaurant near you</Text>
           <Image source={require('../assets/img/partners/opentable_icon.png')} style={[styles.partnerImg, {alignSelf:'center'}]} />
 
         </View>
@@ -49,10 +50,10 @@ import { Assistant_400Regular  , Assistant_700Bold , Assistant_800ExtraBold , As
     const FoodItem = () => {
       return(
         <View style={styles.foodItem}>
-          <Image source={{uri: img}} style={{width:vw,height:'50%'}}/>
+          <Image source={{uri: img}} style={{width:vw,height:'60%'}}/>
           <View style={styles.mealResult}>
             <Text style={styles.mealName}>{meal}</Text>
-            <Text style={styles.mealDesc}>{desc}</Text>
+            <Text style={[styles.mealDesc, {fontSize:fs}]}>{desc}</Text>
           </View>
         </View>
       );
@@ -60,7 +61,7 @@ import { Assistant_400Regular  , Assistant_700Bold , Assistant_800ExtraBold , As
 
     const RemoveBtn = () => {
       return(
-        <TouchableOpacity style={styles.removeBtn}>
+        <TouchableOpacity style={[styles.removeBtn, {width:vw}]}>
           <Text style={styles.removeBtnTxt}>Remove Item</Text>
         </TouchableOpacity>
       );
@@ -69,7 +70,6 @@ import { Assistant_400Regular  , Assistant_700Bold , Assistant_800ExtraBold , As
   const { meal, img } = route.params;
   const {desc} = route.params;
 
-    console.log(meal, img, desc)
 
     if(!fontsLoaded) {
     return(
@@ -93,7 +93,8 @@ const styles=StyleSheet.create({
         flex:1,
         display:'flex',
         flexDirection:'column',
-        alignItems:'stretch'
+        alignItems:'center',
+        justifyContent:'space-between'
     },
     mealName:{
         fontFamily:"Assistant_700Bold",
@@ -103,31 +104,63 @@ const styles=StyleSheet.create({
     },
     mealDesc: {
         fontFamily:'Assistant_600SemiBold',
-        fontSize: 13,
         color:'#000',
         lineHeight:20,
-        paddingBottom:20
+    },
+    partners: {
+      width:'100%',
+      paddingHorizontal:20,
+      flexBasis:'40%',
+      display:'flex',
+      flexDirection:'column',
+      alignItems:'center',
+      justifyContent:'center',
+      height:'100%',
+      marginHorizontal:10
     },
     partnerContainer: {
       display:'flex',
       flexDirection:'row',
-      justifyContent:'space-between'
+      justifyContent:'space-between',
+      alignItems:'center',
+      paddingHorizontal:20,
     },
     partnerImg: {
       width:50,
-      height:50
+      marginTop:20,
+      marginBottom:5,
+      height:50,
+      paddingHorizontal:5
+    },
+    partnersTxt:{
+      fontFamily:'Assistant_800ExtraBold',
+      fontSize:14,
+      textAlign:'center',
+      paddingTop:10
     },
     mealResult: {
       backgroundColor:'#F9D8D5',
-      paddingVertical:10,
-      paddingHorizontal:20
+      paddingVertical:20,
+      paddingHorizontal:20,
+      paddingBottom:40
     },
     removeBtn: {
-      width:'100%'
+      backgroundColor:'#FFCB69',
+      display:'flex',
+      flexDirection:'column',
+      alignItems:"center",
+      justifyContent:'center',
     },
     removeBtnTxt: {
       textAlign:'center',
-      textDecorationLine:'underline'
+      textDecorationLine:'underline',
+      fontSize:11,
+      fontFamily:'Assistant_700Bold',
+      paddingVertical:15
+    },
+    foodItem:{
+      flexBasis:'50%',
+      
     }
 })
 
