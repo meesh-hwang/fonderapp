@@ -23,7 +23,11 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/img/favicon.png",
         "backgroundColor": "#E66255"
-      }
+      },
+      "package": "com.fonder.app",
+      "config": {
+      "googleMaps": {"apiKey": "AIzaSyCVLdzGxLDiTGmm3emqpW0CH6XbCsW32Ow"}
+    }
     },
     "web": {
       "favicon": "./assets/img/favicon.png"
