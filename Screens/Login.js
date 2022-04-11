@@ -3,10 +3,6 @@ import {View, Text,StyleSheet, Image, TextInput} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import * as TokenAction from '../store/actions/user';
 import { useDispatch } from 'react-redux';
-import { useFonts } from 'expo-font';
-
-
-import { Assistant_400Regular  , Assistant_700Bold , Assistant_800ExtraBold , Assistant_600SemiBold , Assistant_500Medium } from '@expo-google-fonts/assistant';
 
 const Login = ({navigation}) => {
 

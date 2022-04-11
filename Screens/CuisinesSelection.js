@@ -1,9 +1,6 @@
-import * as RootNavigation from "../RootNavigation.js";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import { View, Text, FlatList, StyleSheet } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import Ionicons from "react-native-vector-icons/Ionicons";
 import { useSelector } from "react-redux";
 
 import ListItems from "../Components/ListItems";

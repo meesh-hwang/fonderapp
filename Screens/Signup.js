@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import * as RootNavigation from '../RootNavigation.js';
 import {View, Text,StyleSheet,TextInput, Image, Dimensions} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 

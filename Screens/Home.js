@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {View, StyleSheet, Text} from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import Swipes from '../Components/Swipes'
 import { useSelector } from "react-redux";
 
