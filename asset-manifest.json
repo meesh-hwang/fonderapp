@@ -1,11 +1,11 @@
 {
   "files": {
-    "app.js": "/fonderapp/static/js/app.7c7e2c36.chunk.js",
-    "app.js.map": "/fonderapp/static/js/app.7c7e2c36.chunk.js.map",
+    "app.js": "/fonderapp/static/js/app.959dfcc4.chunk.js",
+    "app.js.map": "/fonderapp/static/js/app.959dfcc4.chunk.js.map",
     "runtime~app.js": "/fonderapp/static/js/runtime~app.f76556da.js",
     "runtime~app.js.map": "/fonderapp/static/js/runtime~app.f76556da.js.map",
-    "static/js/2.e78c35a5.chunk.js": "/fonderapp/static/js/2.e78c35a5.chunk.js",
-    "static/js/2.e78c35a5.chunk.js.map": "/fonderapp/static/js/2.e78c35a5.chunk.js.map",
+    "static/js/2.4935ce1a.chunk.js": "/fonderapp/static/js/2.4935ce1a.chunk.js",
+    "static/js/2.4935ce1a.chunk.js.map": "/fonderapp/static/js/2.4935ce1a.chunk.js.map",
     "fonts/Ionicons.ttf": "/fonderapp/./fonts/Ionicons.ttf",
     "favicon-16.png": "/fonderapp/favicon-16.png",
     "favicon-32.png": "/fonderapp/favicon-32.png",
@@ -13,17 +13,17 @@
     "index.html": "/fonderapp/index.html",
     "manifest.json": "/fonderapp/manifest.json",
     "serve.json": "/fonderapp/serve.json",
-    "static/js/2.e78c35a5.chunk.js.LICENSE.txt": "/fonderapp/static/js/2.e78c35a5.chunk.js.LICENSE.txt",
-    "static/media/fries.png": "/fonderapp/static/media/fries.ec086845.png",
-    "static/media/login-girl.png": "/fonderapp/static/media/login-girl.23ba8347.png",
-    "static/media/logo.png": "/fonderapp/static/media/logo.e185b3d2.png",
-    "static/media/onboarding-girl.png": "/fonderapp/static/media/onboarding-girl.bcd097dd.png",
-    "static/media/onboarding-guy.png": "/fonderapp/static/media/onboarding-guy.363c36ad.png",
-    "static/media/profile-invite-ppl.png": "/fonderapp/static/media/profile-invite-ppl.af99d53d.png"
+    "static/js/2.4935ce1a.chunk.js.LICENSE.txt": "/fonderapp/static/js/2.4935ce1a.chunk.js.LICENSE.txt",
+    "static/media/fries.png": "/fonderapp/static/media/fries.b0cde32f.png",
+    "static/media/login-girl.png": "/fonderapp/static/media/login-girl.2bfec254.png",
+    "static/media/logo.png": "/fonderapp/static/media/logo.f529af51.png",
+    "static/media/onboarding-girl.png": "/fonderapp/static/media/onboarding-girl.768771ac.png",
+    "static/media/onboarding-guy.png": "/fonderapp/static/media/onboarding-guy.0a60140a.png",
+    "static/media/profile-invite-ppl.png": "/fonderapp/static/media/profile-invite-ppl.94d73c58.png"
   },
   "entrypoints": [
     "static/js/runtime~app.f76556da.js",
-    "static/js/2.e78c35a5.chunk.js",
-    "static/js/app.7c7e2c36.chunk.js"
+    "static/js/2.4935ce1a.chunk.js",
+    "static/js/app.959dfcc4.chunk.js"
   ]
 }

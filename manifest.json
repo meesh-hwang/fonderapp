@@ -1,11 +1,20 @@
 {
   "background_color": "#E66255",
+  "description": "",
   "display": "standalone",
   "lang": "en",
   "name": "app-fonder",
   "short_name": "app-fonder",
   "start_url": "/?utm_source=web_app_manifest",
   "orientation": "portrait",
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "http://play.google.com/store/apps/details?id=com.fonder.app",
+      "id": "com.fonder.app"
+    }
+  ],
+  "prefer_related_applications": true,
   "icons": [
     {
       "src": "\\fonderapp\\pwa\\chrome-icon\\chrome-icon-144.png",
