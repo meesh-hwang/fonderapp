@@ -51,13 +51,13 @@ export default function ListItems({
   const [isSelected, setSelection] = useState(false);
   const [cuisine, setCuisine] = useState([]);
 
-  if(selectedCuisines.length > 0) {
+  // if(selectedCuisines.length > 0) {
     useEffect(() => {
         if(selectedCuisines.includes(itemData.name)) {
             setSelection(true);
          }
       }, []);
-  }
+  // }
 
   return (
     <TouchableOpacity
