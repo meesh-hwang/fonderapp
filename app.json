@@ -26,11 +26,15 @@
       },
       "package": "com.fonder.app",
       "config": {
-      "googleMaps": {"apiKey": "AIzaSyCVLdzGxLDiTGmm3emqpW0CH6XbCsW32Ow"}
-    }
+        "googleMaps": {
+          "apiKey": "AIzaSyCVLdzGxLDiTGmm3emqpW0CH6XbCsW32Ow"
+        }
+      }
     },
     "web": {
       "favicon": "./assets/img/favicon.png"
-    }
+    },
+    "description": "",
+    "githubUrl": "https://github.com/meesh-hwang/fonderapp"
   }
 }
