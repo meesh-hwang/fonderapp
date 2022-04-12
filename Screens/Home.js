@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import Swipes from '../Components/Swipes'
 import { useSelector } from "react-redux";
+import { useFocusEffect } from '@react-navigation/native';
 
 const Home = ({navigation}) => {
 
@@ -12,8 +13,9 @@ const Home = ({navigation}) => {
     const [isLoaded, checkLoaded] = useState(false);
     const swipesRef = useRef(null)
 
-    useEffect(() =>{
-
+    useFocusEffect(
+      React.useCallback(() =>{
+      
       var requestOptions = {
         method: 'GET',
         redirect: 'follow'
@@ -35,7 +37,8 @@ const Home = ({navigation}) => {
         checkLoaded(true)
     })
     .catch(error => console.log('error', error));
-    }, [])
+    }, []))
+
     if(isLoaded){
       if(userCuisines.length > 0){
         var filteredMeals = meals.filter(item => userCuisines.includes(item.cuisine));

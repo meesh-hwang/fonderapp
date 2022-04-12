@@ -27,7 +27,8 @@ const UserProfile = ({ navigation }) => {
       });
   }, []);
 
-  // Custom Google Fonts
+  // Custom Google Fonts\
+  const [IsReady, SetIsReady] = useState(false);
   let [fontsLoaded] = useFonts({
     Assistant_400Regular,
     Assistant_700Bold,

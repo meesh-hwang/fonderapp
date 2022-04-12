@@ -3,7 +3,8 @@ import {View, Text, Image, StyleSheet, useWindowDimensions} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useFonts } from 'expo-font';
 import { useLoadScript } from '@react-google-maps/api';
-  
+import { useSelector } from "react-redux";
+
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 
 import AppLoading from 'expo-app-loading';
@@ -15,7 +16,11 @@ import { Assistant_400Regular  , Assistant_700Bold , Assistant_800ExtraBold , As
 
 
   const MealInfo = ({navigation, route}) => {
+    const userId = useSelector((state) => state.user.user);
+    const {id} = route.params;
     const vw = useWindowDimensions().width;
+
+
     const [IsReady, SetIsReady] = useState(false);
     
     let [places, setPlaces] = useState([])
@@ -37,8 +42,6 @@ import { Assistant_400Regular  , Assistant_700Bold , Assistant_800ExtraBold , As
         fetch("https://maps.googleapis.com/maps/api/place/nearbysearch/json?query=" + mealString + "&location=49.246292,-123.116226&radius=2500&region=ca&type=restaurant&key=AIzaSyCVLdzGxLDiTGmm3emqpW0CH6XbCsW32Ow")
             .then((response) => response.json())
             .then((result) => { setPlaces(result.results)
-
-             
             }).catch((error) => console.log("error", error))
              
       },[])
@@ -120,7 +123,10 @@ import { Assistant_400Regular  , Assistant_700Bold , Assistant_800ExtraBold , As
 
     const RemoveBtn = () => {
       return(
-        <TouchableOpacity style={[styles.removeBtn, {width:vw}]}>
+        <TouchableOpacity 
+          style={[styles.removeBtn, {width:vw}]}
+          onPress={()=>removeMeal(navigation, userId, id)}
+        >
           <Text style={styles.removeBtnTxt}>Remove Item</Text>
         </TouchableOpacity>
       );
@@ -225,5 +231,32 @@ const styles=StyleSheet.create({
       height: 300
     },
 })
-
+ 
 export default MealInfo;
+
+
+function removeMeal(navigation, userId, id){
+  console.log(userId+" "+ id)
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var raw = JSON.stringify({
+    "user_id": userId,
+    "meal_id": id
+  });
+
+  var requestOptions = {
+    method: 'DELETE',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+
+  fetch("https://fonder.edwardlin.ca/api/v1/users/delmeals.php", requestOptions)
+    .then(response => response.text())
+    .then(result =>{ 
+      console.log(result)
+      navigation.navigate("UserFavourites");
+    })
+    .catch(error => console.log('error', error));
+}
